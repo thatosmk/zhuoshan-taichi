@@ -11,13 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  */
-$primary: #0C2947;
+$primary: #000;
 $secondary: #106054;
 $light: #f2f8ff;
 
 @import "bootstrap";
-@import "flash";
-@import "site";
+@import "font-awesome";
+//@import "flash";
 
 body
 {
@@ -51,6 +51,10 @@ body
     border-radius: 5px;
 }
 
+.h-01
+{
+    background-color: #fff;
+}
 footer
 {
 
