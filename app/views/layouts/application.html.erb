@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Taichi</title>
+    <title> <%= content_for?(:title) ? yield(:title) : 'Tai Chi at UCT' %> | UCT Martial Arts</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name='description' content='<%= yield_meta_tag(:description, 'UCT Martial Arts | Tai Chi') %>' />
+    <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'relax,breathing,UCT sports, anxiety, balance, cape town') %>' />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <% if current_page?(root_path)%>  
+      <div class="h-01">
+        <%= render 'layouts/header' %>
+        <div class="container">
+          <div class="row">
+            <%= render 'layouts/flashy' %>
+          </div>
+          <div class="row pt-2">
+            <div class="col-sm-5 col-md-6 col-lg-6 d-sm-none">
+              <div class="text-center">
+                <h6>Liesbeeck Gardens</h6>
+              </div>
+              <div class="text-center py-5 px-4">
+                <h4>The perfect UCT student residence for you. </h4>
+              </div>
+            </div>
+            <div class="col-sm-5 col-md-6 col-lg-6 d-sm-none">
+              <div class="py-5">
+              </div>
+              <p class="col-sm-6 pt-2">
+                <%= link_to "JOIN NOW", new_user_registration_path, class: "btn btn-secondary btn-block"%>
+              </p>
+            </div>
+            <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block">
+              <div class="d-none d-sm-block pt-5">
+              </div>
+              <div class="py-2">
+                <h4>The perfect UCT student residence for you. </h4>
+                <p class="py-4">
+                  Liesbeeck Gardens offers a block of flats, from one bedrooms to sharing spaces of upto four students.
+                </p>
+                <%= link_to "Get started now", new_user_registration_path, class: "btn btn-secondary btn-lg"%>
+              </div>
+            </div>
+            <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block py-4">
+              <%= image_tag "smiling.jpg", class: "img-fluid"%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+
+    <% elsif current_page?(profile_path) || current_page?(rooms_path)%>  
+      <div class="profile">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+      </div>
+
+    <% else %>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/flashy' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>

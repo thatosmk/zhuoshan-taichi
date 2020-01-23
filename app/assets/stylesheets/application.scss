@@ -10,6 +10,48 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+$primary: #0C2947;
+$secondary: #106054;
+$light: #f2f8ff;
+
+@import "bootstrap";
+@import "flash";
+@import "site";
+
+body
+{
+    overflow-x: hidden;
+}
+
+.navbar-light .navbar-brand
+{
+    font-weight: 600;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    color: $secondary;
+}
+.navbar-light .navbar-nav  > .nav-link:hover
+{
+    color: $primary;
+}
+
+.navbar-light .navbar-nav .active > .nav-link
+{
+    color: $primary;
+    border: 1px solid $primary;
+    border-radius: 5px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link:hover
+{
+    color: #fff;
+    background-color: $primary;
+    border: 1px solid $primary;
+    border-radius: 5px;
+}
+
+footer
+{
+
+}
