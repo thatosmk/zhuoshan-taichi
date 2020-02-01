@@ -1,64 +1,216 @@
 <div class="container">
+  <div class="py-4 beach text-center">
+    <%= image_tag("beach.png", class: "img-fluid")%>
+  </div>
+</div>
 
-  <div class="grounded py-5 text-center">
-    <h2>
-      Why do tai chi
+<div class="row reel">
+  <div class="container">
+    <div class="card-columns py-5 d-lg-inline-block d-none">
+      <div class="card text-center">
+        <div class="card-body">
+          <h1 class="card-title font-weight-bold">Sink</h1>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+      <div class="card p-3">
+        <blockquote class="blockquote mb-0 card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="card d-none">
+        <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card border-light text-center p-3">
+        <blockquote class="blockquote mb-0 card-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+        <footer class="blockquote-footer">
+        <small>
+        Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+        </footer>
+        </blockquote>
+      </div>
+      <div class="card text-center">
+        <div class="card-body">
+          <h1 class="card-title font-weight-bold">Breathe</h1>
+          <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+
+      <div class="card p-3 text-right">
+        <blockquote class="blockquote mb-0">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <footer class="blockquote-footer">
+        <small class="text-muted">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+        </footer>
+        </blockquote>
+      </div>
+      <div class="card">
+      <div class="card-body">
+        <h1 class="card-title font-weight-bold">Relax</h1>
+      <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-block d-lg-none grounded py-5 text-center">
+    <h2 class="font-weight-bold">
+      Sink
+    </h2>
+    <p class="py-4">
+      lorem ipsum lol
+    </p>
+    <h2 class="font-weight-bold">
+      Breathe
+    </h2>
+    <p class="py-4">
+      lorem ipsum lol
+    </p>
+    <h2 class="font-weight-bold">
+      Relax
     </h2>
     <p class="py-4">
       lorem ipsum lol
     </p>
     <p class="">
-    <%= link_to "Read more", about_path, class: "btn btn-primary"%>
+    <%= link_to "Read more", posts_path, class: "btn btn-primary"%>
     </p>
   </div>
-  <div class="grounded py-5 text-center">
-    <h2>
-      Stay grounded
-    </h2>
-    <p>
-      quote reel here
-    </p>
-  </div>
+</div>
 
-  <div class="text-center" id="contact">
-    <div class="py-5">
+<div class="grounded py-4 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col pt-5 d-none d-lg-block">
+        <h1 class="font-weight-bold">
+          Beat anxiety <br/>and depression
+        </h1>
+        <p class="py-4">
+          Stay grounded
+        </p>
+        <div class="py-4">
+          <%= link_to "Learn how", root_path, class: "btn btn-primary btn-lg"%>
+        </div>
+      </div>
+      <div class="col d-none d-lg-block">
+        <%= image_tag("meditate.png", class: "img-fluid")%>
+      </div>
+    </div>
+    <div class="d-block d-lg-none">
+      <h2 style="font-weight: 800;">
+        Stay grounded
+      </h2>
+      <p class="py-4">
+        Beat anxiety or depression
+      </p>
+      <%= image_tag("meditate.png", class: "img-fluid")%>
+    </div>
+  </div>
+</div>
+<div class="container text-center" id="contact">
+  <div class="row">
+    <div class="col d-none d-lg-block">
       <%=image_tag("yin.png",style: "height: 50px;" ,class: "img-fluid")%>
-      <h4 class="mx-4 pt-5">
+      <h1 class="font-weight-bold mx-4 pt-5">
        Martial Arts Room
-      </h4>
+      </h1>
       <p class="pb-2">
         UCT Sports Center
       </p>
-      <div class="row">
-        <div class="col col-block">
-          <h6>
-            beginner class
-          </h6>
-          <p>
-          Tuesdays &amp; Thursdays<br/>
-            17h00 to 18h30
-          </p>
+    </div>
+    <div class="col d-none d-lg-block">
+        <h6>
+          beginner class
+        </h6>
+        <p>
+        Tuesdays &amp; Thursdays<br/>
+          17h00 to 18h30
+        </p>
+        <h6>
+          senior class
+        </h6>
+        <p>
+        Tuesdays &amp; Thursdays<br/>
+          18h30 to 20h00
+        </p>
+        <div class="py-4">
+          <%= link_to "Check out our videos", root_path, class: "btn btn-primary btn-lg"%>
         </div>
-        <div class="col col-block">
-          <h6>
-            senior class
-          </h6>
-          <p>
-          Tuesdays &amp; Thursdays<br/>
-            18h30 to 20h00
-          </p>
-        </div>
+    </div>
+  </div>
+  <div class="py-2 d-block d-lg-none">
+    <%=image_tag("yin.png",style: "height: 50px;" ,class: "img-fluid")%>
+    <h4 class="mx-4 pt-5">
+     Martial Arts Room
+    </h4>
+    <p class="pb-2">
+      UCT Sports Center
+    </p>
+    <div class="row">
+      <div class="col col-block">
+        <h6>
+          beginner class
+        </h6>
+        <p>
+        Tuesdays &amp; Thursdays<br/>
+          17h00 to 18h30
+        </p>
+      </div>
+      <div class="col col-block">
+        <h6>
+          senior class
+        </h6>
+        <p>
+        Tuesdays &amp; Thursdays<br/>
+          18h30 to 20h00
+        </p>
       </div>
     </div>
   </div>
+</div>
 
+  <div class="py-5 text-center stance">
+  </div>
+<div class="container">
+  <div class="py-5 text-center">
+  <h1>
+    Our Coach
+    </h1>
+    <div class="py-4">
+      <%= image_tag("coach.jpg", style: "height: 360px;",class: "img-fluid rounded-circle")%>
+    </div>
+  <p>
+    Content here
+    </p>
+  </div>
+</div>
   <div class="py-5 text-center">
     <h2>
       Club Events
     </h2>
     <!-- events here -->
+    <div class="py-4">
+      <%= image_tag("events.svg", style: "height: 180px;",class: "img-fluid rounded-circle")%>
+    </div>
     <p class="py-4">
-      <%= link_to "view our calendar", root_path, class: "btn btn-dark" %>
+      <%= link_to "view our calendar", events_path, class: "btn btn-dark" %>
     </p>
   </div>
 </div>

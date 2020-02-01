@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :contents
+  resources :posts
+  devise_for :users
+  resources :events
   get 'site/index'
   get '/about', to: "site#about", as: "/about"
 

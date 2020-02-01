@@ -1,0 +1,28 @@
+<%= form_with(model: content, local: true) do |form| %>
+  <% if content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="py-4">
+    <%= form.label :content_type %>
+    <%= form.select :content_type, options_for_select(["Aims","Coach", "Contact","History","About","Cost of Price"]), {}, class: "custom-select custom-select-lg" %>
+  </div>
+
+  <div class="py-4">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: "form-control form-control-lg" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Content", class: "btn btn-secondary btn-lg" %>
+    <%= link_to "Cancel", :back, class: "btn btn-danger btn-lg"%>
+  </div>
+<% end %>

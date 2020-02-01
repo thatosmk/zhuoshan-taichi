@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="py-4 text-center">
+    <h1 class="font-weight-bold text-primary">Events</h1>
+    <p>
+      View our club social events
+    </p>
+  </div>
+
+  <div class="py-4">
+    <% @events.each do |event| %>
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= event.title %>
+          </h4>
+          <p class="card-text">
+            <%= event.desc %>
+          </p>
+          <p class="font-weight-bold">
+            From <br/>
+          </p>
+            <%= event.from %>
+          <p class="font-weight-bold">
+            Until <br/>
+          </p>
+            <%= event.until %>
+          <p class="py-2">
+            <strong>Info: </strong>
+            <%= event.notes %>
+          </p>
+          <p><%= link_to 'Show', event %></p>
+          <p><%= link_to 'Edit', edit_event_path(event) %></p>
+          <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to 'New Event', new_event_path %>
+</div>
+

@@ -5,7 +5,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="/">UCT Tai Chi Club</a>
+      <a class="navbar-brand" href="/">UCT Tai Chi</a>
       <ul class="navbar-nav ml-auto" role="navigation">
           <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
@@ -19,9 +19,15 @@
           <li class="nav-item">
             <%= link_to "About Us", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item active">
-            <%= link_to "members", root_path, class: "nav-link" %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "Log out", destroy_user_session_path,method: :delete, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item active">
+              <%= link_to "Student Log in", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>

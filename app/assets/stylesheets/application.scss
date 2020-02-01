@@ -11,12 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  */
-$primary: #000;
-$secondary: #106054;
-$light: #f2f8ff;
+$primary: #7BC8B5;
+$secondary: #609e8e;
+$light: #add6cc;
+$dark: #2e4c45;
 
 @import "bootstrap";
 @import "font-awesome";
+@import "site";
 //@import "flash";
 
 body
@@ -24,6 +26,10 @@ body
     overflow-x: hidden;
 }
 
+.btn
+{
+    color: #fff;
+}
 .navbar-light .navbar-brand
 {
     font-weight: 600;
@@ -53,6 +59,10 @@ body
 
 .h-01
 {
+    h1
+    {
+        font-weight: 800; 
+    }
     background-color: #fff;
 }
 footer
