@@ -14,7 +14,6 @@
 $primary: #7BC8B5;
 $secondary: #609e8e;
 $light: #add6cc;
-$dark: #2e4c45;
 
 @import "bootstrap";
 @import "font-awesome";
@@ -35,35 +34,42 @@ body
     font-weight: 600;
     font-size: 1.5em;
     letter-spacing: 1px;
-    color: $secondary;
+    color: #111;
 }
 .navbar-light .navbar-nav  > .nav-link:hover
 {
     color: $primary;
 }
 
+.navbar-light .navbar-nav  > .nav-link
+{
+    color: #111;
+}
 .navbar-light .navbar-nav .active > .nav-link
 {
-    color: $primary;
-    border: 1px solid $primary;
+    color: #111;
+    border: 1px solid #111;
     border-radius: 5px;
+    padding: 8px 18px;
 }
 
 .navbar-light .navbar-nav .active > .nav-link:hover
 {
     color: #fff;
-    background-color: $primary;
-    border: 1px solid $primary;
+    background-color: #111;
+    border: 1px solid #fff;
     border-radius: 5px;
 }
 
 .h-01
 {
+    background-color: #fff;
+    min-height: 45vh;
+
     h1
     {
-        font-weight: 800; 
+        font-size: 4.4em; 
     }
-    background-color: #fff;
 }
 footer
 {

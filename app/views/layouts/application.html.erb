@@ -18,7 +18,7 @@
       <div class="h-01">
         <%= render 'layouts/header' %>
         <div class="container">
-          <div class="row">
+          <div class="py-4">
             <%= render 'layouts/flashy' %>
           </div>
           <div class="row pt-2"><!-- for mobile -->
@@ -37,19 +37,16 @@
             </div>
             <!-- bigger screens -->
             <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block">
-              <h1>
-                    "be like water, my friend"
-                  <br/>
-                  <p class="font-weight-bold">
-                  - Bruce Lee
-                  </p>
+              <h1 class="font-weight-bold">
+                Discover your best self
               </h1>
               <p class="py-4">
-                lorem ipsum lol
+                This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit
               </p>
-              <%= link_to "Join UCT Tai Chi", about_path, class: "btn btn-primary"%>
+              <%= link_to "Join UCT Tai Chi", about_path, class: "btn btn-dark", style: "padding: 18px 28px; font-size: 18px;"%>
             </div>
             <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block py-4">
+              <%= image_tag("best_self.png", class:"img-fluid")%>
             </div>
           </div>
         </div>
