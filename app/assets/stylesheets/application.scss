@@ -11,15 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
  */
-$primary: #7BC8B5;
-$secondary: #609e8e;
-$light: #add6cc;
-$dark: #111;
-$white: #ffffff;
-
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
 @import "site";
+@import "dashboard";
 //@import "flash";
 
 body

@@ -14,65 +14,69 @@
   </head>
 
   <body>
-    <% if current_page?(root_path)%>  
-      <div class="h-01">
-        <%= render 'layouts/header' %>
-        <div class="container">
-          <div class="py-4">
-            <%= render 'layouts/flashy' %>
-          </div>
-          <div class="row pt-2"><!-- for mobile -->
-            <div class="col-sm-5 col-md-6 col-lg-6 d-block d-sm-none">
-              <div class="container">
-                <div class="text-center">
-                  <h1>header 1</h1>
-                  <p>
-                    "be like water, my friend"
-                  </p>
-                  <p class="font-weight-bold">
-                  - Bruce Lee
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- bigger screens -->
-            <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block">
-              <h1 class="font-weight-bold">
-                Very Strong Header here
-              </h1>
-              <p class="py-4">
-                This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit
-              </p>
-              <%= link_to "Get Started", about_path, class: "btn btn-dark", style: "padding: 18px 28px; font-size: 18px;"%>
-            </div>
-            <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block py-4">
-              <%= image_tag("best_self.png", class:"img-fluid")%>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    <% elsif current_page?(dashboard_path) || current_page?(settings_path) ||current_page?(members_path) ||current_page?(blog_path) ||current_page?(calendar_path) %>  
+
+    <% if current_user.try(:admin?) %>  
       <div class="row">
         <section class="col-md-2 col-lg-2">
           <aside class="py-5 sidebar">
+            <%= render 'dashboard/sidebar' %>
           </aside>
         </section>
 
         <section class="col-md-10 col-lg-10">
-          <%= render 'dashboard/navbar' %>
-          <div class="py-5 main-wrapper">
+          <main class="mx-4 py-2 main-wrapper">
+            <%= render 'dashboard/navbar' %>
             <%= yield %>
-          </div>
+          </main>
         </section>
       </div>
-
     <% else %>
-      <%= render 'layouts/header' %>
-      <%= render 'layouts/flashy' %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+      <% if current_page?(root_path)%>  
+        <div class="h-01">
+          <%= render 'layouts/header' %>
+          <div class="container">
+            <div class="py-4">
+              <%= render 'layouts/flashy' %>
+            </div>
+            <div class="row pt-2"><!-- for mobile -->
+              <div class="col-sm-5 col-md-6 col-lg-6 d-block d-sm-none">
+                <div class="container">
+                  <div class="text-center">
+                    <h1>header 1</h1>
+                    <p>
+                      "be like water, my friend"
+                    </p>
+                    <p class="font-weight-bold">
+                    - Bruce Lee
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- bigger screens -->
+              <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block">
+                <h1 class="font-weight-bold">
+                  Very Strong Header here
+                </h1>
+                <p class="py-4">
+                  This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit
+                </p>
+                <%= link_to "Get Started", about_path, class: "btn btn-dark", style: "padding: 18px 28px; font-size: 18px;"%>
+              </div>
+              <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block py-4">
+                <%= image_tag("best_self.png", class:"img-fluid")%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+
+      <% else %>
+        <%= render 'layouts/header' %>
+        <%= render 'layouts/flashy' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      <% end %>
     <% end %>
   </body>
 </html>

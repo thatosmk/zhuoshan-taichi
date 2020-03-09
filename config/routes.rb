@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :clubs
   get 'dashboard/overview', as: :dashboard
   get 'dashboard/settings', as: :settings
   get 'dashboard/members', as: :members

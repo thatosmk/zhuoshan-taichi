@@ -1,0 +1,67 @@
+<%= form_with(model: club, local: true) do |form| %>
+  <% if club.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(club.errors.count, "error") %> prohibited this club from being saved:</h2>
+
+      <ul>
+      <% club.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :about %>
+    <%= form.text_area :about %>
+  </div>
+
+  <div class="field">
+    <%= form.label :history %>
+    <%= form.text_area :history %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dress_code %>
+    <%= form.text_area :dress_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :class_times %>
+    <%= form.text_area :class_times %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contacts %>
+    <%= form.text_area :contacts %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coach_name %>
+    <%= form.text_field :coach_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coach_bio %>
+    <%= form.text_area :coach_bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook %>
+    <%= form.text_field :facebook %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instagram %>
+    <%= form.text_field :instagram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :youtube %>
+    <%= form.text_field :youtube %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

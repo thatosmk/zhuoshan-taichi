@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>About:</strong>
+  <%= @club.about %>
+</p>
+
+<p>
+  <strong>History:</strong>
+  <%= @club.history %>
+</p>
+
+<p>
+  <strong>Dress code:</strong>
+  <%= @club.dress_code %>
+</p>
+
+<p>
+  <strong>Class times:</strong>
+  <%= @club.class_times %>
+</p>
+
+<p>
+  <strong>Contacts:</strong>
+  <%= @club.contacts %>
+</p>
+
+<p>
+  <strong>Coach name:</strong>
+  <%= @club.coach_name %>
+</p>
+
+<p>
+  <strong>Coach bio:</strong>
+  <%= @club.coach_bio %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @club.facebook %>
+</p>
+
+<p>
+  <strong>Instagram:</strong>
+  <%= @club.instagram %>
+</p>
+
+<p>
+  <strong>Youtube:</strong>
+  <%= @club.youtube %>
+</p>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>

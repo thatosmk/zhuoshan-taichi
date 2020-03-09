@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_172630) do
+ActiveRecord::Schema.define(version: 2020_03_09_080226) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer "visit_id"
@@ -51,6 +51,23 @@ ActiveRecord::Schema.define(version: 2020_02_01_172630) do
     t.datetime "started_at"
     t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.text "about"
+    t.text "history"
+    t.text "dress_code"
+    t.text "class_times"
+    t.text "contacts"
+    t.string "coach_name"
+    t.text "coach_bio"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "youtube"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "membership_students"
+    t.string "membership_external"
   end
 
   create_table "contents", force: :cascade do |t|
