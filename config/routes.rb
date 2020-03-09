@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'dashboard/overview', as: :dashboard
+  get 'dashboard/settings', as: :settings
+  get 'dashboard/members', as: :members
+  get 'dashboard/blog', as: :blog
+  get 'dashboard/calendar', as: :calendar
+
   resources :contents
   resources :posts
   devise_for :users

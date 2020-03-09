@@ -14,6 +14,8 @@
 $primary: #7BC8B5;
 $secondary: #609e8e;
 $light: #add6cc;
+$dark: #111;
+$white: #ffffff;
 
 @import "bootstrap";
 @import "font-awesome";
@@ -73,5 +75,6 @@ body
 }
 footer
 {
-
+    background-color: $dark;
+    color: $white;
 }
