@@ -1,0 +1,28 @@
+/* mixins */
+/*
+ * author: Thato Semoko
+ * date: 16 March 2020
+ * ref: https://uxplanet.org/common-webpage-design-mistakes-59eed9831bd7
+ */
+@mixin landing_div($color) {
+    padding-top: 130px;
+    padding-bottom: 130px;
+    background-color: $color;
+    position: relative;
+    min-height: calc(260px + 50vh);
+}
+
+@mixin landing_h1($color){
+    padding-top: 80px;
+    font-size: 72px;
+}
+@mixin landing_h2($color){
+    font-size: 46px;
+}
+@mixin landing_h3($color){
+    font-size: 26px;
+}
+@mixin landing_p($color){
+    padding-top: 50px;
+    font-size: 24px;
+}

@@ -1,21 +1,93 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$primary: #7BC8B5;
-$secondary: #609e8e;
-$light: #add6cc;
-$dark: #2e4c45;
+@import "variables";
+@import "mixins";
 
-.members
+.reviews
 {
-    background-image: url("tiny_graphic_background.png");
-    background-repeat: no-repeat;
-    background-position: center center;
+    @include landing_div(#fff);
+    h2
+    {
+        @include landing_h2(#000);
+    }
 }
 
+.grounded
+{
+    @include landing_div(#f2f2f2);
+    h2
+    {
+        @include landing_h2(#000);
+        padding-top: 130px;
+    }
+}
+.members
+{
+    background-color: #fff;
+    //background-image: url("tiny_graphic_background.png");
+    //background-repeat: no-repeat;
+    //background-position: center center;
+    h2
+    {
+        @include landing_h2(#000);
+    }
+    .costs 
+    {
+        padding-top: 80px;
+
+        h3
+        {
+            @include landing_h3(#000);
+        }
+    }
+}
+.venue
+{
+    @include landing_div(#f2f2f2);
+    h2
+    {
+        @include landing_h2(#000);
+        padding-top: 30px;
+    }
+    h3
+    {
+        @include landing_h3(#000);
+    }
+    p
+    {
+        @include landing_p(#000);
+        padding-top: 20px;
+    }
+}
+
+.coach
+{
+    @include landing_div(#fff);
+    h2
+    {
+        @include landing_h2(#000);
+        padding-top: 30px;
+    }
+}
 .socials
 {
-    min-height: 60vh;
+    @include landing_div(#f2f2f2);
+    h2
+    {
+        @include landing_h2(#000);
+        padding-top: 30px;
+    }
+}
+.contact
+{
+    @include landing_div(#fff);
+    h2
+    {
+        @include landing_h2(#000);
+        padding-top: 80px;
+    }
+    @include landing_p(#000);
 }
 .reel
 {
