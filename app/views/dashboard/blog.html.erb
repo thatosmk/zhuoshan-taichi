@@ -9,14 +9,19 @@
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-body">
-        <h4 class="card-title"><%= post.title %></h4>
-        <p class="card-text">
-          <%= post.body %>
-        </p>
-        <p><%= link_to 'Show', post %> |
-        <%= link_to 'Edit', edit_post_path(post) %> | 
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
+          <h4 class="card-title"><%= post.title %></h4>
+          <p class="card-text">
+            <%= post.body.html_safe[0..400] %>
+            <%= link_to 'more...', post %> 
+          </p>
+          <% if !@admin.nil? %>
+            <%= link_to 'Edit', edit_post_path(post) %> | 
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+            <%= link_to 'Read more', post, class: "card-link" %> 
+        </div>
       </div>
     <% end %>
   </div>

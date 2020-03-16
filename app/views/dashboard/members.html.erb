@@ -5,4 +5,28 @@
     </h4>
     <hr/>
   </div>
+  <div class="card py-4 mx-2">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table mt-2">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>email</th>
+              <th>admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user|%>
+              <tr>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.admin %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
 </div>

@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
   end
 
   def members
+    @users = User.all
   end
 
   def blog
