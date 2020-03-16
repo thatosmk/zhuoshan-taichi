@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> <%= content_for?(:title) ? yield(:title) : 'Tai Chi at UCT' %> | UCT Martial Arts</title>
+    <title> <%= content_for?(:title) ? yield(:title) : 'Find & Become Your Best Yourself' %> | Tai Chi</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91400897-5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91400897-5');
+  </script>
 
     <meta name='description' content='<%= yield_meta_tag(:description, 'UCT Martial Arts | Tai Chi') %>' />
     <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'relax,breathing,UCT sports, anxiety, balance, cape town') %>' />

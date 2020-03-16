@@ -18,6 +18,7 @@
 @import "site";
 @import "dashboard";
 @import "simple_calendar";
+@import "mixins";
 //@import "flash";
 
 body
@@ -64,7 +65,7 @@ body
 .h-01
 {
     background-color: #fff;
-    min-height: 45vh;
+    min-height: 75vh;
 
     h1
     {
@@ -73,6 +74,5 @@ body
 }
 footer
 {
-    background-color: $dark;
-    color: $white;
+    background-color: #67676f;
 }
