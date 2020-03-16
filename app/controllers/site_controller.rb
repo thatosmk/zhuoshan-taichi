@@ -1,4 +1,6 @@
 class SiteController < ApplicationController
+  def gallery
+  end
   def index
   end
 

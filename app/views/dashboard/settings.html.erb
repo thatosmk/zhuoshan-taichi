@@ -104,7 +104,7 @@
                 <div class="modal-body">
                   <%= form_with(model: @club, local: true) do |form| %>
                     <div class="py-4">
-                      <%= form.text_area :about, class: "form-control form-control-lg", placeholder: "talk about your club", rows: 8 %>
+                      <%= form.text_area :about, 'data-provider': :summernote, class: "form-control form-control-lg", placeholder: "talk about your club", rows: 8 %>
                     </div>
                     <div class="py-4">
                       <%= form.submit "Update about", class: "btn btn-success btn-lg"%>
@@ -146,7 +146,7 @@
                         <%= form.text_field :coach_name, class: "form-control form-control-lg", placeholder: "Name of your coach", required: true%>
                       </div>
                       <div class="py-4">
-                        <%= form.text_area :coach_bio, class: "form-control form-control-lg", placeholder: "Talk about your coach", rows: 15, required: true%>
+                        <%= form.text_area :coach_bio, 'data-provider': :summernote, class: "form-control form-control-lg", placeholder: "Talk about your coach", rows: 15, required: true%>
                       </div>
                       <div class="py-4">
                         <%= form.submit "Update", class: "btn btn-success btn-lg"%>

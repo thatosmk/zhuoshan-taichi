@@ -12,6 +12,7 @@ class DashboardController < ApplicationController
   end
 
   def blog
+    @posts = Post.all
   end
 
   def calendar

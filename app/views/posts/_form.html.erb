@@ -11,22 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="py-4">
+    <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "Blog Title" %>
   </div>
 
-  <div class="field">
+  <div class="py-5 mx-2">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, 'data-provider': :summernote %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="py-2">
+    <%= form.submit "Create Blog", class: "btn btn-success btn-lg" %>
+    <%= link_to 'Back to posts', posts_path , class: "btn btn-danger btn-lg" %>
   </div>
 <% end %>

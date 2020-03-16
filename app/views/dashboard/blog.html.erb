@@ -5,4 +5,19 @@
     </h4>
     <hr/>
   </div>
+  <div class="card-columns py-4">
+    <% @posts.each do |post| %>
+      <div class="card">
+        <div class="card-body">
+        <h4 class="card-title"><%= post.title %></h4>
+        <p class="card-text">
+          <%= post.body %>
+        </p>
+        <p><%= link_to 'Show', post %> |
+        <%= link_to 'Edit', edit_post_path(post) %> | 
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+      </div>
+    <% end %>
+  </div>
 </div>

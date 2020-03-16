@@ -1,11 +1,12 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
-
-<div class="py-4 text-center">
-  <h1>Our Blog</h1>
-</div>
+    <div class="py-5">
+      <h1 class="font-weight-bold py-4">
+        Blog 
+      </h1>
+    </div>
 
   <div class="py-4">
+    <div class="card-columns">
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-body">
@@ -20,7 +21,10 @@
       </div>
     <% end %>
   </div>
+  </div>
 
-<hr>
-<%= link_to 'New Post', new_post_path, class: "btn btn-info" %>
+  <% if user_signed_in? && current_user.admin? %>
+  <hr>
+  <%= link_to 'New Post', new_post_path, class: "btn btn-info" %>
+  <% end %>
 </div>
