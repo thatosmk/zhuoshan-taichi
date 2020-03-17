@@ -11,6 +11,13 @@
     {
         @include landing_h2(#000);
     }
+    .students
+    {
+        @include landing_div(#fff);
+        background-image: url("tiny_graphic_background.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 }
 
 .grounded
@@ -21,25 +28,42 @@
         @include landing_h2(#000);
         padding-top: 130px;
     }
+    p
+    {
+        @include landing_p(#000); 
+    }
 }
 .members
 {
     background-color: #fff;
-    //background-image: url("tiny_graphic_background.png");
-    //background-repeat: no-repeat;
-    //background-position: center center;
     h2
     {
         @include landing_h2(#000);
     }
     .costs 
     {
-        padding-top: 80px;
+        @media(max-width: 768px)
+        {
+            padding: 100px 0px; 
+        }
+        @media(min-width: 768px)
+        {
+            @include landing_div(#fff);
+        }
 
         h3
         {
             @include landing_h3(#000);
         }
+
+    }
+    .wear
+    {
+        @include landing_div(#fff);
+    p
+    {
+        @include landing_p(#000); 
+    }
     }
 }
 .venue
@@ -69,6 +93,10 @@
         @include landing_h2(#000);
         padding-top: 30px;
     }
+    p
+    {
+        @include landing_p(#000); 
+    }
 }
 .socials
 {
@@ -77,6 +105,10 @@
     {
         @include landing_h2(#000);
         padding-top: 30px;
+    }
+    p
+    {
+        @include landing_p(#000); 
     }
 }
 .contact

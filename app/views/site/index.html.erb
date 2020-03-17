@@ -1,11 +1,11 @@
 <div class="reviews">
   <div class="container">
-    <div class="py-4 text-center">
+    <div class="py-5 text-center">
       <h2 class="font-weight-bold">
         In the words of our students
       </h2>
     </div>
-    <div class="py-5">
+    <div class="py-5 students">
       <div class="carousel slide" id="thoughts-controls" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -224,14 +224,7 @@
       </h2>
       <div class="py-5 mx-4">
         <p class="py-5 mx-4">
-          Readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
+          In the practice of Tai Qi one finds peace of heart, tranquillity of spirit and a better viewpoint from which to view the frenetic activity which surrounds us in the sentient world.  There is no space for “escapism” through Tai Qi, as we endeavour to acknowledge, embrace and become one with life as it is.
         </p>
       </div>
     </div>
@@ -241,56 +234,92 @@
 <div class="py-5 members">
   <div class="container">
     <div class="text-center">
-      <h1 class="pt-5">
+      <h1 class="pt-5 pb-4">
         On Membership
       </h1>
-      <p class="lead pt-2 pb-5">
+      <p class="lead pt-4 pb-5">
         We are a club that is governed by Sport Administration at the University of Cape Town
       </p>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="py-5 costs">
-          <h3>
-          Affordable Classes
-          </h3>
-          <p class="py-2">
-            <p class="lead">
-              Your first class: FREE
+    <div class="d-md-block d-none">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="py-5 costs">
+            <h3>
+            Affordable Classes
+            </h3>
+            <p class="py-2">
+              <p class="lead">
+                Your first class: FREE
+              </p>
+              <p class="lead">
+                UCT Students: R380-/year
+              </p>
+              <p class="lead">
+                External members: R760-/year
+              </p>
             </p>
-            <p class="lead">
-              UCT Students: R380-/year
-            </p>
-            <p class="lead">
-              External members: R760-/year
-            </p>
-          </p>
+          </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="py-2 text-center">
-          <div class="text-center">
-            <%=image_tag("club_fun.jpg",style: "" ,class: "img-fluid rounded")%>
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="py-2 text-center">
+            <div class="text-center">
+              <%=image_tag("club_fun.jpg",style: "" ,class: "img-fluid rounded")%>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="d-md-none d-sm-block">
+      <div class="text-center">
+        <%=image_tag("club_fun.jpg",style: "" ,class: "img-fluid rounded")%>
+      </div>
+      <div class="pt-5 costs text-center">
+        <h3>
+        Affordable Classes
+        </h3>
+        <p class="py-2">
+          <p class="lead">
+            Your first class: FREE
+          </p>
+          <p class="lead">
+            UCT Students: R380-/year
+          </p>
+          <p class="lead">
+            External members: R760-/year
+          </p>
+        </p>
+      </div>
+      <div class="text-center">
+        <%=image_tag("wear_club.jpg",style: "" ,class: "img-fluid rounded")%>
+      </div>
+      <div class="py-5 text-center">
+        <h3>
+          What To Wear
+        </h3>
+        <p style="line-height: 1.58;" class="lead py-2">
+          <%= @club.dress_code %>
+        </p>
+      </div>
+    </div>
 
-    <div class="py-5">
-      <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <%=image_tag("wear_club.jpg",style: "" ,class: "img-fluid rounded")%>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <div class="py-5">
-            <h3>
-              What To Wear
-            </h3>
-            <p class="lead py-2">
-              Lorem Ipsum is that it has a more-or-less normal distribution of 
-              letters, as opposed to using 'Content here, content here', making it 
-              look like readable English. Many desktop publishing packages and web 
-            </p>
+    <div class="d-md-block d-none">
+      <div class="py-5 wear">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 col-lg-6">
+            <%=image_tag("wear_club.jpg",style: "" ,class: "img-fluid rounded")%>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-6">
+            <div class="py-5">
+              <h3>
+                What To Wear
+              </h3>
+              <p style="line-height: 1.58;" class="lead py-2">
+                Lorem Ipsum is that it has a more-or-less normal distribution of 
+                letters, as opposed to using 'Content here, content here', making it 
+                look like readable English. Many desktop publishing packages and web 
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -298,7 +327,7 @@
   </div>
 </div>
 
-<div class="venue">
+<div class="venue" id="venue">
   <div class="text-center">
     <%=image_tag("yin.png",style: "height: 50px;" ,class: "img-fluid")%>
     <h2>
@@ -325,29 +354,52 @@
 </div>
 
 <div class="container coach">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-6">
-      <div class="py-5">
-        <h1>
-        High Quality Classes
-        </h1>
-        <p class="py-4">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text.
-        </p>
-        <%= link_to "Read more", about_path, class: "btn btn-huge btn-primary"%>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-6">
-      <div class="py-5 text-center">
-        <div class="py-4">
-          <%= image_tag("coach.jpg", style: "height: 360px;",class: "img-fluid rounded")%>
+  <div class="d-md-block d-none">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="py-5">
+          <h1>
+          High Quality Classes
+          </h1>
+          <p class="lead py-4">
+            It is a long established fact that a reader will be distracted by the
+            readable content of a page when looking at its layout. The point of
+            using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it
+            look like readable English. Many desktop publishing packages and web
+            page editors now use Lorem Ipsum as their default model text.
+          </p>
+          <%= link_to "Read more", about_path, class: "btn btn-huge btn-primary"%>
         </div>
       </div>
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <div class="py-5 text-center">
+          <div class="py-4">
+            <%= image_tag("coach.jpg", style: "height: 360px;",class: "img-fluid rounded")%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-md-none d-block">
+    <div class="py-5 text-center">
+      <h1>
+      High Quality Classes
+      </h1>
+      <p class="lead py-4">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using 'Content here, content here', making it
+        look like readable English. Many desktop publishing packages and web
+        page editors now use Lorem Ipsum as their default model text.
+      </p>
+    </div>
+    <div class="py-4 text-center">
+      <%= image_tag("coach.jpg", style: "height: 360px;",class: "img-fluid rounded")%>
+    </div>
+    <div class="py-4 text-center">
+      <%= link_to "Read more", about_path, class: "btn btn-huge btn-primary"%>
     </div>
   </div>
 </div>
@@ -389,7 +441,7 @@
   </div>
 </div>
 
-<div class="pt-5 text-center contact">
+<div class="pt-5 text-center contact" id="contact">
   <h2 class="font-weight-bold">Contact us</h2>
   <p class="py-5">
     <span class="mx-2 fa fa-envelope fa-1x">

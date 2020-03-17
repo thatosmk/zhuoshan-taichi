@@ -131,7 +131,7 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
-    friendly_id (5.3.0)
+    friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     geocoder (1.6.1)
     globalid (0.4.2)
@@ -360,7 +360,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-rails
-  friendly_id
+  friendly_id (~> 5.2.4)
   google-api-client
   groupdate
   impressionist

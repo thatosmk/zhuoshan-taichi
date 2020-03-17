@@ -84,7 +84,6 @@ gem 'simple_form'
 gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'summernote-rails', '~> 0.8.12.0'
-gem 'friendly_id'
 # error reporting and monitoring
 gem 'administrate'
 gem 'caxlsx'
@@ -92,3 +91,4 @@ gem 'caxlsx_rails'
 gem "sentry-raven"
 gem 'google-api-client'
 gem "simple_calendar", "~> 2.0"
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+

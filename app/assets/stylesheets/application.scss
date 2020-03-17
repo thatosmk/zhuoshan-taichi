@@ -16,6 +16,7 @@
 @import "font-awesome";
 @import "summernote-bs4";
 @import "site";
+@import "post";
 @import "dashboard";
 @import "simple_calendar";
 @import "mixins";
@@ -29,6 +30,11 @@ body
 .btn
 {
     color: #fff;
+}
+
+.btn-huge
+{
+    padding: 28px 28px;
 }
 .navbar-light .navbar-brand
 {
@@ -69,7 +75,8 @@ body
 
     h1
     {
-        font-size: 4.4em; 
+        font-size: 46px; 
+        line-height: 1.48;
     }
 }
 footer
