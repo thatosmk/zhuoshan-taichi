@@ -31,6 +31,11 @@ body
 {
     color: #fff;
 }
+
+.btn-huge
+{
+    padding: 28px 28px;
+}
 .navbar-light .navbar-brand
 {
     font-weight: 600;
@@ -70,7 +75,8 @@ body
 
     h1
     {
-        font-size: 4.4em; 
+        font-size: 46px; 
+        line-height: 1.48;
     }
 }
 footer
