@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
+<% title "Our Blog | Tai Chi" %>
+<div class="container">
+  <div class="py-5 post-header text-center">
+    <h1 class="font-weight-bold py-4">
+      <%= @post.title %>
+    </h1>
+  </div>
+  <div class="py-5 par-text">
+    <p>
+      <%= @post.body.html_safe %>
+    </p>
+  </div>
+  <div class="py-5">
+    <% if !@admin.nil? %>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    <% else %>
+      <%= link_to 'Back', posts_path, class: "btn btn-huge btn-danger" %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

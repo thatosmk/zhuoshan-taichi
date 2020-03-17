@@ -21,6 +21,10 @@
         @include landing_h2(#000);
         padding-top: 130px;
     }
+    p
+    {
+        @include landing_p(#000); 
+    }
 }
 .members
 {
@@ -40,6 +44,7 @@
         {
             @include landing_h3(#000);
         }
+
     }
 }
 .venue
@@ -69,6 +74,10 @@
         @include landing_h2(#000);
         padding-top: 30px;
     }
+    p
+    {
+        @include landing_p(#000); 
+    }
 }
 .socials
 {
@@ -77,6 +86,10 @@
     {
         @include landing_h2(#000);
         padding-top: 30px;
+    }
+    p
+    {
+        @include landing_p(#000); 
     }
 }
 .contact

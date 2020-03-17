@@ -9,7 +9,7 @@
     padding-bottom: 130px;
     background-color: $color;
     position: relative;
-    min-height: calc(260px + 50vh);
+    min-height: calc(260px + 30vh);
 }
 
 @mixin landing_h1($color){
@@ -25,4 +25,5 @@
 @mixin landing_p($color){
     padding-top: 50px;
     font-size: 24px;
+    line-height: 1.58;
 }
