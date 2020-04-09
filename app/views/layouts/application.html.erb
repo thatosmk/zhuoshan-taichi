@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> <%= content_for?(:title) ? yield(:title) : 'Find & Become Your Best Yourself' %> | Tai Chi</title>
+    <title> <%= content_for?(:title) ? yield(:title) : 'Yang Style' %> | Tai Chi Cape Town</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name='description' content='<%= yield_meta_tag(:description, 'Yang Style Tai Chi in Cape Town') %>' />
+    <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'relaxing, tai chi cape town, martial arts, beat anxiety,mental health, self discoverty, adventure') %>' />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91400897-5"></script>
@@ -18,6 +20,7 @@
     <meta name='description' content='<%= yield_meta_tag(:description, 'UCT Martial Arts | Tai Chi') %>' />
     <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'relax,breathing,UCT sports, anxiety, balance, cape town') %>' />
 
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -51,41 +54,39 @@
             <div class="row pt-2"><!-- for mobile -->
               <div class="d-block d-sm-none">
                 <div class="container">
-                  <div class="text-center">
-                    <h2>Yang Style Tai Chi</h2>
-                    <p class="lead py-4">
-                      "be like water, my friend"
-                    </p>
-                    <p class="font-weight-bold">
-                    - Bruce Lee
+                  <div class="py-2">
+                    <h1 class="py-2">UCT Tai Chi</h1>
+                    <p class="py-4">
+                      This gentle form of exercise can help maintain harmony, 
+                      content, freedom and balance in your life. It could be 
+                      the perfect activity for the rest of your life.
                     </p>
                     <div class="pt-2 pb-2">
-                      <%= image_tag("club_logo.jpg", class:"img-fluid")%>
+                      <%= image_tag("walking_undraw.png", class:"img-fluid")%>
                     </div>
-                    <div class="pt-2 pb-2">
-                      <%= link_to "Join our class", root_path, class: "btn btn-block btn-primary"%>
+                    <div class="pt-5 pb-2">
+                      <%= link_to "Join our class", root_path, class: "btn btn-block btn-huge btn-dark"%>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- bigger screens -->
-              <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block">
-                <h1 class="font-weight-bold">
-                  The best fight to win, <br/>is the fight that you <br/>do not have to fight !
+              <div class="py-5 d-none d-sm-block">
+                <h1 class="py-2">
+                  Tai Chi
                 </h1>
+                <p class="py-5">
+                      This gentle form of exercise can help maintain harmony, 
+                      content, freedom and balance in your life. It could be 
+                      the perfect activity for the rest of your life.
+                </p>
                 <%= link_to "Join Tai Chi", about_path, class: "btn btn-dark", style: "padding: 18px 28px; font-size: 18px;"%>
-              </div>
-              <div class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-block py-4">
-                <div class="py-2">
-                  <%= image_tag("club_logo.jpg", class:"img-fluid")%>
-                </div>
               </div>
             </div>
           </div>
         </div>
         <%= yield %>
         <%= render 'layouts/footer' %>
-
       <% else %>
         <%= render 'layouts/header' %>
         <%= render 'layouts/flashy' %>

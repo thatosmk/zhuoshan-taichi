@@ -16,21 +16,60 @@
         @include landing_div(#fff);
         background-image: url("tiny_graphic_background.png");
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: top center;
+
+        .carousel
+        {
+            padding-top: 100px; 
+
+            .card
+            {
+                padding: 50px 30px; 
+            }
+
+            .carousel-controls
+            {
+                padding-top: 300px; 
+
+                .carousel-control-prev-icon
+                {
+                    margin-top: 200px;
+                    padding: 20px 20px;
+                    background-color: $primary;
+                }
+                span
+                {
+                    border: 1px solid $primary;
+                }
+            }
+        }
     }
 }
 
 .grounded
 {
-    @include landing_div(#f2f2f2);
+    @include landing_div(transparent);
+    background-image: url("wave_about_1x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(260px + 85vh);
     h2
     {
         @include landing_h2(#000);
-        padding-top: 130px;
+        padding-top: 350px;
     }
     p
     {
-        @include landing_p(#000); 
+        @media(max-width: 768px)
+        {
+            line-height: 1.5;
+            font-weight: 400; 
+            font-size: 1.2em;
+        }
+        @media(min-width: 768px)
+        {
+            @include landing_p(#000); 
+        }
     }
 }
 .members
@@ -101,10 +140,14 @@
 .socials
 {
     @include landing_div(#f2f2f2);
+    background-image: url("wave_about_1x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(260px + 85vh);
     h2
     {
         @include landing_h2(#000);
-        padding-top: 30px;
+        padding-top: 150px;
     }
     p
     {
