@@ -80,7 +80,33 @@
             </div>
             <div class="col-xs-12 col-md-4 col-lg-4">
               <div class="px-4 py-4">
-                <h6>Dress Code &nbsp; <a href="#times-modal" data-toggle="modal" data-target="#times-modal">update</a></h6>
+                <h6>Dress Code &nbsp; <a href="#dress-modal" data-toggle="modal" data-target="#dress-modal">update</a></h6>
+                <p class="py-2">
+                  <%= @club.dress_code%>
+                </p>
+              </div>
+              <div class="modal fade" id="dress-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content mx-2">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update Dress Code</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= form_with(model: @club, local: true) do |form| %>
+                        <div class="py-4 mx-2">
+                          <%= form.label :dress_code %>
+                          <%= form.text_area :dress_code, class: "form-control form-control-lg", placeholder: "What can members wear?", rows: 10%>
+                        </div>
+                        <div class="py-4 mx-2">
+                          <%= form.submit "Update dress code", class: "btn btn-success btn-lg"%>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
