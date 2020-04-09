@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> <%= content_for?(:title) ? yield(:title) : 'Yang Style' %> | Tai Chi Cape Town</title>
+    <title> <%= content_for?(:title) ? yield(:title) : 'University of Cape Town' %> | Tai Chi </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name='description' content='<%= yield_meta_tag(:description, 'Yang Style Tai Chi in Cape Town') %>' />
-    <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'relaxing, tai chi cape town, martial arts, beat anxiety,mental health, self discoverty, adventure') %>' />
+    <meta name='description' content='<%= yield_meta_tag(:description, 'University of Tai Chi Club governed by UCT Sports Center') %>' />
+    <meta name='keywords' content='<%= yield_meta_tag(:keywords, 'relaxing, tai chi, harmony, cape town, martial arts, beat anxiety,mental health, self discoverty, adventure') %>' />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91400897-5"></script>
@@ -28,7 +28,8 @@
 
   <body>
 
-    <% if user_signed_in? and current_user.try(:admin?) %>  
+    <% if user_signed_in? %>  
+      <% if current_user.admin? %>
       <div class="row">
         <section class="col-md-2 col-lg-2">
           <aside class="py-5 sidebar">
@@ -43,6 +44,22 @@
           </main>
         </section>
       </div>
+      <% else %>
+        <div class="row">
+          <section class="col-md-2 col-lg-2">
+            <aside class="py-5 sidebar">
+              <%= render 'users_dashboard/sidebar' %>
+            </aside>
+          </section>
+
+          <section class="col-md-10 col-lg-10">
+            <main class="mx-4 py-2 main-wrapper">
+              <%= render 'users_dashboard/navbar' %>
+              <%= yield %>
+            </main>
+          </section>
+        </div>
+      <% end %>
     <% else %>
       <% if current_page?(root_path)%>  
         <div class="h-01">

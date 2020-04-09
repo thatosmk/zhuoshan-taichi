@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   before_action :set_club
   before_action :set_admin
 
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      dashboard_path
+    else
+      users_dashboard_files_path
+    end
+  end
+
   protected
     def configure_permitted_parameters
       # added first and last names
