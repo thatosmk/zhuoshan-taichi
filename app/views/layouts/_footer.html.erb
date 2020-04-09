@@ -1,35 +1,52 @@
 <footer class="py-5 footer">
-  <div class="text-center">
-    <h4 class="py-4 text-white">zhuoshan tai chi</h4>
-    <%= link_to "About Us" ,about_path,  class: "mx-2"%>
-    <%= link_to "Find us" ,"#venue",  class: "mx-2"%>
-    <%= link_to "Blog" , posts_path,  class: "mx-2"%>
-    <%= link_to "Contact" ,"#contact",  class: "mx-2"%>
-    <%= link_to "Gallery" ,gallery_path,  class: "mx-2"%>
-  </div>
+  <div class="text-center footer-div d-none d-md-block">
+    <h2 class="py-4 text-white footer-header">zhuoshan tai chi</h2>
+    <p>
+      <%= link_to "About Us" ,about_path,  class: "mx-2"%>
+      <%= link_to "Find us" ,"#venue",  class: "mx-2"%>
+      <%= link_to "Blog" , posts_path,  class: "mx-2"%>
+      <%= link_to "Contact" ,"#contact",  class: "mx-2"%>
+      <%= link_to "Gallery" ,gallery_path,  class: "mx-2"%>
+    </p>
 
-  <div class="text-center pt-5">
-    <a href="https://www.facebook.com">
-      <span class="mx-2 fa fa-facebook fa-2x">
-      </span>
-    </a>
-    <a href="https://www.instagram.com">
-      <span class="mx-2 fa fa-instagram fa-2x">
-      </span>
-    </a>
-    <a href="https://www.linkedin.com">
-      <span class="mx-2 fa fa-linkedin fa-2x"></span>
-    </a>
-    <a href="https://www.twitter.com">
-      <span class="mx-2 fa fa-twitter fa-2x"></span>
-    </a>
-    <a href="https://www.youtube.com">
-      <span class="mx-2 fa fa-youtube fa-2x"></span>
-    </a>
+    <div class="py-5">
+      <a href="https://www.facebook.com">
+        <span class="mx-2 fa fa-facebook fa-2x">
+        </span>
+      </a>
+      <a href="https://www.instagram.com">
+        <span class="mx-2 fa fa-instagram fa-2x">
+        </span>
+      </a>
+      <a href="https://www.youtube.com">
+        <span class="mx-2 fa fa-youtube fa-2x"></span>
+      </a>
+      <p class="pt-5 text-white"> zhuoshan tai chi &copy; 2020 All Rights Reserved</p>		
+    </div>
   </div>
-  <div class="text-center pt-4">
-    <p class="text-white"> zhuoshan tai chi &copy; 2020 All Rights Reserved</p>		
-    <%= link_to "Privacy Policy", root_path, class: "mx-2" %>
-    <%= link_to "Terms of Use", root_path, class: "mx-2"%>
+  <div class="text-center footer-div d-md-none d-block">
+    <h2 class="py-4 text-white footer-header">zhuoshan tai chi</h2>
+    <p>
+      <%= link_to "About Us" ,about_path,  class: "px-2"%>
+      <%= link_to "Find us" ,"#venue",  class: "px-2"%>
+      <%= link_to "Blog" , posts_path,  class: "px-2"%>
+      <%= link_to "Contact" ,"#contact",  class: "px-2"%>
+      <%= link_to "Gallery" ,gallery_path,  class: "px-2"%>
+    </p>
+
+    <div class="py-5 text-center">
+      <a href="https://www.facebook.com">
+        <span class="px-2 fa fa-facebook fa-2x">
+        </span>
+      </a>
+      <a href="https://www.instagram.com">
+        <span class="px-2 fa fa-instagram fa-2x">
+        </span>
+      </a>
+      <a href="https://www.youtube.com">
+        <span class="px-2 fa fa-youtube fa-2x"></span>
+      </a>
+      <p class="pt-5 text-white"> zhuoshan tai chi &copy; 2020 All Rights Reserved</p>		
+    </div>
   </div>
 </footer>
