@@ -5,10 +5,8 @@
       <%= @post.title %>
     </h1>
   </div>
-  <div class="py-5 par-text">
-    <p>
-      <%= @post.body.html_safe %>
-    </p>
+  <div class="py-5">
+  <%= @post.body.html_safe %>
   </div>
   <div class="py-5">
     <% if !@admin.nil? %>
