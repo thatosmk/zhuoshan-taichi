@@ -121,6 +121,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.1)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     errbase (0.2.0)
     erubi (1.9.0)
     execjs (2.7.0)
@@ -358,6 +361,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  devise_invitable (~> 2.0.0)
   figaro
   font-awesome-rails
   friendly_id (~> 5.2.4)
