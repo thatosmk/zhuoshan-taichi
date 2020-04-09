@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   extend FriendlyId
-  friendly_id :slug_options, use: :slugged
+  friendly_id :title, use: :slugged
 
 
   def slug_options
