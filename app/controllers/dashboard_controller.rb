@@ -2,6 +2,10 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
   before_action :set_admin
 
+  def videos
+    @videos = Video.all
+  end
+
   def overview
   end
 

@@ -1,2 +1,28 @@
-<h1>UsersDashboard#videos</h1>
-<p>Find me in app/views/users_dashboard/videos.html.erb</p>
+<div>
+  <h1 class="font-weight-bold py-4">Videos</h1>
+  <p class="lead py-2">watch our videos</p>
+  <div class="card-columns">
+    <% @videos.each do |video|%>
+      <div class="card mb-4">
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" width="1280" height="720" src="https://www.youtube.com/embed/#{video.youtube_id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%=  link_to video.title, video %>
+            <br/>
+            <span class="font-weight-light" style="font-size: 0.8em">
+              <%= time_ago_in_words(video.created_at)%> ago
+            </span>
+          </h4>
+          <span class="badge badge-primary font-weight-light" style="font-size: 0.8em">
+            <%= video.category %>
+          </span>
+          <p class="card-text">
+            <%=  video.desc %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

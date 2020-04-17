@@ -32,7 +32,7 @@
       <% if current_user.admin? %>
       <div class="row">
         <section class="col-md-2 col-lg-2">
-          <aside class="py-5 sidebar">
+          <aside class="py-5 sidebar position-fixed">
             <%= render 'dashboard/sidebar' %>
           </aside>
         </section>
@@ -65,14 +65,14 @@
         <div class="h-01">
           <%= render 'layouts/header' %>
           <div class="container">
-            <div class="py-4">
+            <div>
               <%= render 'layouts/flashy' %>
             </div>
-            <div class="row pt-2"><!-- for mobile -->
+            <div class="row"><!-- for mobile -->
               <div class="d-block d-sm-none">
                 <div class="container">
-                  <div class="py-2">
-                    <h1 class="py-2">UCT Tai Chi</h1>
+                  <div>
+                    <h1>UCT Tai Chi</h1>
                     <p class="py-4">
                       This gentle form of exercise can help maintain harmony, 
                       content, freedom and balance in your life. It could be 
@@ -81,7 +81,7 @@
                     <div class="pt-2 pb-2">
                       <%= image_tag("walking_undraw.png", class:"img-fluid")%>
                     </div>
-                    <div class="pt-5 pb-2">
+                    <div class="pt-2 pb-2">
                       <%= link_to "Join our class", root_path, class: "btn btn-block btn-huge btn-dark"%>
                     </div>
                   </div>
@@ -90,14 +90,14 @@
               <!-- bigger screens -->
               <div class="py-5 d-none d-sm-block">
                 <h1 class="py-2">
-                  Tai Chi
+                  UCT Tai Chi
                 </h1>
                 <p class="py-5">
                       This gentle form of exercise can help maintain harmony, 
                       content, freedom and balance in your life. It could be 
                       the perfect activity for the rest of your life.
                 </p>
-                <%= link_to "Join Tai Chi", about_path, class: "btn btn-dark", style: "padding: 18px 28px; font-size: 18px;"%>
+                <%= link_to "Join UCT Tai Chi", about_path, class: "btn btn-dark", style: "padding: 18px 28px; font-size: 18px;"%>
               </div>
             </div>
           </div>

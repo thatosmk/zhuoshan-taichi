@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :taichi_files
   get 'users_dashboard/videos'
   get 'users_dashboard/files'
   get 'users_dashboard/gallery'
   get 'users_dashboard/settings'
   resources :clubs
+  resources :videos
   get 'dashboard/overview', as: :dashboard
   get 'dashboard/settings', as: :settings
   get 'dashboard/members', as: :members
