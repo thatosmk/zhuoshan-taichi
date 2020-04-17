@@ -1,2 +1,30 @@
-<h1>UsersDashboard#files</h1>
-<p>Find me in app/views/users_dashboard/files.html.erb</p>
+<div class="py-2">
+  <h1 class="font-weight-bold py-4">Files</h1>
+  <p class="lead py-2">Read or download files</p>
+  <div class="card-columns">
+    <% @files.each do |file|%>
+      <% if file.docs.attached? %>
+        <div class="card mb-4">
+          <div class="text-center">
+            <%= image_tag file.docs.preview(resize: "200x200") %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">
+              <%=  link_to file.title, url_for(file.docs) %>
+              <br/>
+              <span class="font-weight-light" style="font-size: 0.8em">
+                <%= time_ago_in_words(file.created_at)%> ago
+              </span>
+            </h4>
+            <span class="badge badge-primary font-weight-light" style="font-size: 0.8em">
+              <%= file.category %>
+            </span>
+            <p class="card-text">
+              <%=  file.desc %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

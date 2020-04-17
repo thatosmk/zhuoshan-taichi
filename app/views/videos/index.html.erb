@@ -1,0 +1,68 @@
+<div>
+  <h1 class="font-weight-bold py-4">Videos
+    <button class="btn btn-lg btn-primary" href="#videos-modal" data-toggle="modal" data-target="#videos-modal">add new video</button>
+  </h1>
+  <p class="lead py-2">watch our videos</p>
+  <div class="card-columns">
+    <% @videos.each do |video|%>
+      <div class="card mb-4">
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" width="1280" height="720" src="https://www.youtube.com/embed/#{video.youtube_id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%=  link_to video.title, video %>
+            <br/>
+            <span class="font-weight-light" style="font-size: 0.8em">
+              <%= time_ago_in_words(video.created_at)%> ago
+            </span>
+          </h4>
+          <span class="badge badge-primary font-weight-light" style="font-size: 0.8em">
+            <%= video.category %>
+          </span>
+          <p class="card-text">
+            <%=  video.desc %>
+          </p>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Edit", edit_video_path(video), class: "btn btn-light" %>
+          <%= link_to "Delete", video_path(video), method: :delete, class: "btn btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="modal fade" id="videos-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create new video</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form_with(model: @video, local: true) do |form| %>
+            <div class="py-4 mx-2">
+              <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "title"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.select :category, options_for_select(["Qigong", "Form"]), {}, class: "custom-select custom-select-lg"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.text_field :desc, class: "form-control form-control-lg", placeholder: "Video description"%>
+            </div>
+            <div class="py-4 mx-2">
+              <span class="font-weight-light">
+                https://www.youtube.com/watch?v=[video ID]
+              </span>
+              <%= form.text_field :youtube_id, class: "form-control form-control-lg", placeholder: "video ID"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.submit "Add video", class: "btn btn-success btn-lg"%>
+            </div>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

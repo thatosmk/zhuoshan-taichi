@@ -1,0 +1,26 @@
+<h1>Videos#edit</h1>
+<p>Find me in app/views/videos/edit.html.erb</p>
+<div class="col-xs-12 col-md-6 col-lg-6">
+<div class="card-body">
+  <%= form_with(model: @video, local: true) do |form| %>
+    <div class="py-4 mx-2">
+      <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "title"%>
+    </div>
+    <div class="py-4 mx-2">
+        <%= form.select :category, options_for_select(["Qigong", "Form"]), {}, class: "custom-select custom-select-lg"%>
+      </div>
+      <div class="py-4 mx-2">
+        <%= form.text_field :desc, class: "form-control form-control-lg", placeholder: "Video description"%>
+      </div>
+      <div class="py-4 mx-2">
+        <span class="font-weight-light">
+          https://www.youtube.com/watch?v=[video ID]
+        </span>
+        <%= form.text_field :youtube_id, class: "form-control form-control-lg", placeholder: "video ID"%>
+      </div>
+      <div class="py-4 mx-2">
+        <%= form.submit "Update video", class: "btn btn-success btn-lg"%>
+      </div>
+    <% end%>
+  </div>
+</div>

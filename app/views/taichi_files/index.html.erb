@@ -1,0 +1,75 @@
+<div>
+  <h1 class="font-weight-bold py-4">Files
+    <button class="btn btn-lg btn-primary" href="#taichi_files-modal" data-toggle="modal" data-target="#taichi_files-modal">
+      add new file
+    </button>
+  </h1>
+  <p class="lead py-2">watch our videos</p>
+  <div class="card-columns">
+    <% @taichi_files.each do |t_files|%>
+      <% if t_files.docs.attached? %>
+        <div class="card mb-4">
+          <div class="text-center">
+            <%= image_tag t_files.docs.preview(resize: "200x200") %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">
+              <%=  link_to t_files.title, url_for(t_files.docs) %>
+              <br/>
+              <span class="font-weight-light" style="font-size: 0.8em">
+                <%= time_ago_in_words(t_files.created_at)%> ago
+              </span>
+            </h4>
+            <span class="badge badge-primary font-weight-light" style="font-size: 0.8em">
+              <%= t_files.category %>
+            </span>
+            <p class="card-text">
+              <%=  t_files.desc %>
+            </p>
+          </div>
+          <div class="card-footer">
+            <%= link_to "Edit", taichi_files_path(t_files), class: "btn btn-light" %>
+            <%= link_to "Delete", taichi_files_path(t_files), method: :delete, class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="modal fade" id="taichi_files-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create new video</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form_with(model: @taichi_file, local: true) do |form| %>
+            <div class="py-4 mx-2">
+              <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "title"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.label :category%>
+              <%= form.select :category, options_for_select(["General","Qigong", "Form"]), {}, class: "custom-select custom-select-lg"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.text_field :desc, class: "form-control form-control-lg", placeholder: "File description"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.label :file_to_uploaded%>
+              <br/>
+              <span class="font-italic">
+                pdfs are preferred
+              </span>
+              <%= form.file_field :docs, class: "form-control-file form-control-file-lg"%>
+            </div>
+            <div class="py-4 mx-2">
+              <%= form.submit "Add File", class: "btn btn-success btn-lg"%>
+            </div>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

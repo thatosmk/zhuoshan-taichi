@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_092400) do
+ActiveRecord::Schema.define(version: 2020_04_17_102137) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -134,6 +134,16 @@ ActiveRecord::Schema.define(version: 2020_04_09_092400) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "taichi_files", force: :cascade do |t|
+    t.string "title"
+    t.string "desc"
+    t.string "category"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_taichi_files_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -159,6 +169,17 @@ ActiveRecord::Schema.define(version: 2020_04_09_092400) do
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.string "desc"
+    t.string "youtube_id"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_videos_on_slug", unique: true
   end
 
 end

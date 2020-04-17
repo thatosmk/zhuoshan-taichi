@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @taichi_file.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @taichi_file.desc %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @taichi_file.category %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @taichi_file.user %>
+</p>
+
+<%= link_to 'Edit', edit_taichi_file_path(@taichi_file) %> |
+<%= link_to 'Back', taichi_files_path %>

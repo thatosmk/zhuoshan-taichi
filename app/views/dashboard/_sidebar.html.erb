@@ -1,6 +1,5 @@
 <div class="py-5 mx-2">
   <h4 class="text-center">
-    <%= @admin.first_name %> <%= @admin.last_name %>
   </h4>
 <ul class="nav flex-column">
   <div class="py-4 text-center">
@@ -17,6 +16,12 @@
   </li>
   <li class="nav-item">
     <%= link_to "Members", members_path, class: "nav-link"%>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Files", taichi_files_path, class: "nav-link"%>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Videos", videos_path, class: "nav-link"%>
   </li>
   <li class="nav-item">
     <%= link_to "Settings", settings_path, class: "nav-link"%>

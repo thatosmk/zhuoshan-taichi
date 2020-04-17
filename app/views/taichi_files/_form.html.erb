@@ -1,0 +1,37 @@
+<%= form_with(model: taichi_file, local: true) do |form| %>
+  <% if taichi_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(taichi_file.errors.count, "error") %> prohibited this taichi_file from being saved:</h2>
+
+      <ul>
+      <% taichi_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_field :desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
