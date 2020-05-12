@@ -1,8 +1,9 @@
-<div>
+<div class="container">
   <h1 class="font-weight-bold py-4">Files
-    <button class="btn btn-lg btn-primary" href="#taichi_files-modal" data-toggle="modal" data-target="#taichi_files-modal">
+    <button class="d-none d-lg-block btn btn-lg btn-primary" href="#taichi_files-modal" data-toggle="modal" data-target="#taichi_files-modal">
       add new file
     </button>
+    <%= link_to "add new file", new_taichi_file_path, class: 'btn btn-lg btn-primary'%>
   </h1>
   <p class="lead py-2">watch our videos</p>
   <div class="card-columns">

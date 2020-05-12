@@ -1,37 +1,37 @@
-<%= form_with(model: taichi_file, local: true) do |form| %>
-  <% if taichi_file.errors.any? %>
+<%= form_with(model: @taichi_file, local: true) do |form| %>
+  <% if @taichi_file.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(taichi_file.errors.count, "error") %> prohibited this taichi_file from being saved:</h2>
+      <h2><%= pluralize(@taichi_file.errors.count, "error") %> prohibited this event from being saved:</h2>
 
       <ul>
-      <% taichi_file.errors.full_messages.each do |message| %>
+      <% @taichi_file.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="mx-5">
+    <div class="py-4 mx-2">
+      <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "title", required: true%>
+    </div>
+    <div class="py-4 mx-2">
+      <%= form.label :category%>
+      <%= form.select :category, options_for_select(["General","Qigong", "Form"]), {}, class: "custom-select custom-select-lg"%>
+    </div>
+    <div class="py-4 mx-2">
+      <%= form.text_area :desc, class: "form-control form-control-lg", placeholder: "File description"%>
+    </div>
+    <div class="py-4 mx-2">
+      <%= form.label :file_to_uploaded%>
+      <br/>
+      <span class="font-italic">
+        pdfs are preferred
+      </span>
+      <%= form.file_field :docs, class: "form-control-file form-control-file-lg", required: true%>
+    </div>
+    <div class="py-4 mx-2">
+      <%= form.submit "Add File", class: "btn btn-success btn-lg"%>
+      <%= link_to 'Back', taichi_files_path, class: "mx-4 btn btn-danger btn-lg" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :desc %>
-    <%= form.text_field :desc %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<% end%>

@@ -1,11 +1,11 @@
-<div class="py-2">
+<div class="container">
   <div class="py-2">
     <h4 class="text-muted">
       Club Settings
     </h4>
     <hr/>
   </div>
-  <div class="py-2">
+  <div class="py-2 d-none d-lg-block">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="display-sec">
@@ -143,6 +143,283 @@
         </div>
       </div>
     </div>
+    <div class="py-2">
+      <h4 class="text-muted">
+        Club Coach &amp; Socials
+      </h4>
+      <hr>
+    </div>
+    <div class="py-2">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="py-2 display-sec">
+            <h6>Coach name  &nbsp; <a href="#coach-modal" data-toggle="modal" data-target="#coach-modal">update</a></h6>
+            <p class="lead py-4">
+              <%= @club.coach_name %>
+            </p>
+            <div class="modal fade" id="coach-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update your bio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= form_with(model: @club, local: true) do |form| %>
+                      <div class="py-4">
+                        <%= form.text_field :coach_name, class: "form-control form-control-lg", placeholder: "Name of your coach", required: true%>
+                      </div>
+                      <div class="py-4">
+                        <%= form.text_area :coach_bio, 'data-provider': :summernote, class: "form-control form-control-lg", placeholder: "Talk about your coach", rows: 15, required: true%>
+                      </div>
+                      <div class="py-4">
+                        <%= form.submit "Update", class: "btn btn-success btn-lg"%>
+                      </div>
+                    <% end%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pb-2 display-sec">
+            <h6> Bio </h6>
+            <p class="lead py-2 pr-4">
+              <%= @club.coach_bio %>
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="py-2 display-sec">
+            <h6>Club Social Media  &nbsp; <a href="#social-modal" data-toggle="modal" data-target="#social-modal">update</a></h6>
+            <div class="modal fade" id="social-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update club's social media links</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= form_with(model: @club, local: true) do |form| %>
+                      <div class="py-4">
+                        <%= form.text_field :facebook, class: "form-control form-control-lg", placeholder: "facebook link", required: true%>
+                      </div>
+                      <div class="py-4">
+                        <%= form.text_field :instagram, class: "form-control form-control-lg", placeholder: "instagram link", required: true%>
+                      </div>
+                      <div class="py-4">
+                        <%= form.text_field :youtube, class: "form-control form-control-lg", placeholder: "youtube channel", required: true%>
+                      </div>
+                      <div class="py-4">
+                        <%= form.submit "Update", class: "btn btn-success btn-lg"%>
+                      </div>
+                    <% end%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="lead py-4">
+              <a href="<%= @club.facebook %>">
+                <span class="mx-2 fa fa-facebook fa-2x">
+                </span>
+              </a>
+              <a href="<%= @club.instagram %>">
+                <span class="mx-2 fa fa-instagram fa-2x">
+                </span>
+              </a>
+              <a href="<%= @club.youtube %>">
+                <span class="mx-2 fa fa-youtube fa-2x">
+                </span>
+              </a>
+            </p>
+          </div>
+          <div class="py-2 display-sec">
+            <h6>Club Contacts  &nbsp; <a href="#contacts-modal" data-toggle="modal" data-target="#contacts-modal">update</a></h6>
+            <div class="modal fade" id="contacts-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update club's contacts</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= form_with(model: @club, local: true) do |form| %>
+                      <div class="py-4">
+                        <%= form.text_field :contacts, class: "form-control form-control-lg", placeholder: "clubs email address", required: true%>
+                      </div>
+                      <div class="py-4">
+                        <%= form.submit "Update", class: "btn btn-success btn-lg"%>
+                      </div>
+                    <% end%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="lead py-4">
+              <a href="<%= @club.contacts %>">
+                <span class="mx-2 fa fa-envelope fa-1x">
+                </span>
+              </a>
+              <%= @club.contacts %>
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="py-2 display-sec">
+            <h6> Events Calendar </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="my-4 display-sec">
+      <div class="py-2">
+        <h4 class="text-muted">
+          Profile Settings
+        </h4>
+        <hr/>
+      </div>
+      <div class="py-4">
+        <%= link_to "Edit Details",root_path %>
+      </div>
+      <div class="py-2">
+        <%= link_to "Cancel Account",root_path,class:"text-muted" %>
+      </div>
+    </div>
+  </div>
+  <div class="py-2 d-block d-lg-none">
+      <div class="display-sec">
+        <div class="row">
+          <div class="col-xs-12 col-md-4 col-lg-4">
+            <div class="px-4 py-4">
+              <h6>Membership &nbsp; <a href="#member-modal" data-toggle="modal" data-target="#member-modal">update</a></h6>
+              <p class="py-2">
+                <em>Students</em>
+                <%= @club.membership_students %>
+                <br/>
+                <em>External members</em>
+                <%= @club.membership_external %>
+              </p>
+              <div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update your hourly rate</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= form_with(model: @club, local: true) do |form| %>
+                        <div class="py-4 mx-2">
+                          <%= form.text_field :membership_students, class: "form-control form-control-lg", placeholder: "Membership for students"%>
+                        </div>
+                        <div class="py-4 mx-2">
+                          <%= form.text_field :membership_external, class: "form-control form-control-lg", placeholder: "Membership for External members"%>
+                        </div>
+                        <div class="py-4 mx-2">
+                          <%= form.submit "Update", class: "btn btn-success btn-lg"%>
+                        </div>
+                      <% end%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4 col-lg-4">
+            <div class="px-4 py-4">
+              <h6>Class Times &nbsp; <a href="#times-modal" data-toggle="modal" data-target="#times-modal">update</a></h6>
+              <p class="py-2">
+                <%= @club.class_times%>
+              </p>
+              <div class="modal fade" id="times-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content mx-2">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update Class Times</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= form_with(model: @club, local: true) do |form| %>
+                        <div class="py-4 mx-2">
+                          <%= form.label :class_times %>
+                          <%= form.text_area :class_times, class: "form-control form-control-lg", placeholder: "add for both beginners & seniors", rows: 10%>
+                        </div>
+                        <div class="py-4 mx-2">
+                          <%= form.submit "Update class times", class: "btn btn-success btn-lg"%>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4 col-lg-4">
+            <div class="px-4 py-4">
+              <h6>Dress Code &nbsp; <a href="#dress-modal" data-toggle="modal" data-target="#dress-modal">update</a></h6>
+              <p class="py-2">
+                <%= @club.dress_code%>
+              </p>
+            </div>
+            <div class="modal fade" id="dress-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content mx-2">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Dress Code</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= form_with(model: @club, local: true) do |form| %>
+                      <div class="py-4 mx-2">
+                        <%= form.label :dress_code %>
+                        <%= form.text_area :dress_code, class: "form-control form-control-lg", placeholder: "What can members wear?", rows: 10%>
+                      </div>
+                      <div class="py-4 mx-2">
+                        <%= form.submit "Update dress code", class: "btn btn-success btn-lg"%>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-4 display-sec">
+        <h6>About page  &nbsp; <a href="#bio-modal" data-toggle="modal" data-target="#bio-modal">update</a></h6>
+        <div class="modal fade" id="bio-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update your bio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= form_with(model: @club, local: true) do |form| %>
+                  <div class="py-4">
+                    <%= form.text_area :about, 'data-provider': :summernote, class: "form-control form-control-lg", placeholder: "talk about your club", rows: 8 %>
+                  </div>
+                  <div class="py-4">
+                    <%= form.submit "Update about", class: "btn btn-success btn-lg"%>
+                  </div>
+                <% end%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="py-2">
       <h4 class="text-muted">
         Club Coach &amp; Socials

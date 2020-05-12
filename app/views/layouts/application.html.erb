@@ -27,37 +27,50 @@
   </head>
 
   <body>
-
     <% if user_signed_in? %>  
       <% if current_user.admin? %>
-      <div class="row">
-        <section class="col-md-2 col-lg-2">
-          <aside class="py-5 sidebar position-fixed">
-            <%= render 'dashboard/sidebar' %>
-          </aside>
-        </section>
+        <div class="d-none d-lg-block">
+          <div class="row">
+            <section class="col-md-2 col-lg-2">
+              <aside class="py-5 sidebar">
+                <%= render 'dashboard/sidebar' %>
+              </aside>
+            </section>
 
-        <section class="col-md-10 col-lg-10">
-          <main class="mx-4 py-2 main-wrapper">
-            <%= render 'dashboard/navbar' %>
-            <%= yield %>
-          </main>
-        </section>
-      </div>
+            <section class="col-md-10 col-lg-10">
+              <main class="mx-4 py-2 main-wrapper">
+                <%= render 'dashboard/navbar' %>
+                <%= yield %>
+              </main>
+            </section>
+          </div>
+        </div>
+        <div class="d-block d-lg-none">
+          <%= render 'dashboard/navbar' %>
+          <%= yield %>
+        </div>
       <% else %>
-        <div class="row">
-          <section class="col-md-2 col-lg-2">
-            <aside class="py-5 sidebar">
-              <%= render 'users_dashboard/sidebar' %>
-            </aside>
-          </section>
+        <div class="d-none d-lg-block">
+          <div class="row">
+            <section class="col-md-2 col-lg-2">
+              <aside class="py-5 sidebar">
+                <%= render 'users_dashboard/sidebar' %>
+              </aside>
+            </section>
 
-          <section class="col-md-10 col-lg-10">
-            <main class="mx-4 py-2 main-wrapper">
-              <%= render 'users_dashboard/navbar' %>
-              <%= yield %>
-            </main>
-          </section>
+            <section class="col-md-10 col-lg-10">
+              <main class="mx-4 py-2 main-wrapper">
+                <%= render 'users_dashboard/navbar' %>
+                <%= yield %>
+              </main>
+            </section>
+          </div>
+        </div>
+        <div class="d-block d-lg-none">
+          <%= render 'users_dashboard/navbar' %>
+          <div class="container">
+            <%= yield %>
+          </div>
         </div>
       <% end %>
     <% else %>

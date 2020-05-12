@@ -4,6 +4,17 @@
 @import "variables";
 @import "mixins";
 
+.about_section
+{
+
+    p
+    {
+        font-size: 32px !important; 
+        font-weiht: 400 !important;
+        line-height: 26px !important;
+        margin-top: 2em;
+    }
+}
 .reviews
 {
     @include landing_div(#fff);

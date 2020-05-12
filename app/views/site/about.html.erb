@@ -13,10 +13,8 @@
       <h1 class="font-weight-bold py-4">
         About 
       </h1>
-      <div class="py-4">
-        <p class="lead">
-          <%= @club.about.html_safe %>
-        </p>
+      <div class="py-4 about_section">
+        <%= @club.about.html_safe %>
       </div>
     </div>
   <% end %>

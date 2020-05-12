@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/gallery', to: "site#gallery", as: "/gallery"
   get '/forms', to: "site#forms", as: "/forms"
 
-  root to: "site#index"
+  unauthenticated :users do
+    root to: "site#index"
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
