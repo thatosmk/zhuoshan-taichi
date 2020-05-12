@@ -3,15 +3,13 @@
     <button class="d-none d-lg-block btn btn-lg btn-primary" href="#taichi_files-modal" data-toggle="modal" data-target="#taichi_files-modal">
       add new file
     </button>
-    <%= link_to "add new file", new_taichi_file_path, class: 'btn btn-lg btn-primary'%>
+    <%= link_to "add new file", new_taichi_file_path, class: 'btn btn-lg btn-primary d-lg-none d-block'%>
   </h1>
-  <p class="lead py-2">watch our videos</p>
   <div class="card-columns">
     <% @taichi_files.each do |t_files|%>
       <% if t_files.docs.attached? %>
         <div class="card mb-4">
           <div class="text-center">
-            <%= image_tag t_files.docs.preview(resize: "200x200") %>
           </div>
           <div class="card-body">
             <h4 class="card-title">
