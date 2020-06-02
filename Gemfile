@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 group :production do
@@ -66,12 +66,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+end
+
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'figaro'
-gem 'react-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'chartkick'
@@ -83,7 +85,6 @@ gem 'kaminari'
 
 gem 'simple_form'
 gem 'jquery-turbolinks'
-gem 'simple_form'
 gem 'summernote-rails', '~> 0.8.12.0'
 # error reporting and monitoring
 gem 'administrate'
@@ -94,3 +95,4 @@ gem 'google-api-client'
 gem "simple_calendar", "~> 2.0"
 gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'devise_invitable', '~> 2.0.0'
+gem "webpacker"
