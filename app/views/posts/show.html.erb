@@ -1,20 +1,20 @@
 <% title "Our Blog | Tai Chi" %>
 <div class="container">
-  <div class="py-5 post-header text-center">
+  <article class="py-5">
     <h1 class="font-weight-bold py-4">
       <%= @post.title %>
     </h1>
-  </div>
-  <div class="py-5">
-  <%= @post.body.html_safe %>
-  </div>
-  <div class="py-5">
-    <% if !@admin.nil? %>
-      <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Back', posts_path %>
-    <% else %>
-      <%= link_to 'Back', posts_path, class: "btn btn-huge btn-danger" %>
-    <% end %>
-  </div>
+    <div class="py-5">
+    <%= @post.content %>
+    </div>
+    <div class="py-5">
+      <% if @admin %>
+        <%= link_to 'Edit', edit_post_path(@post) %> |
+        <%= link_to 'Back', posts_path %>
+      <% else %>
+        <%= link_to 'Back', posts_path, class: "btn btn-huge btn-danger" %>
+      <% end %>
+    </div>
+  </article>
 </div>
 

@@ -1,6 +1,18 @@
 @import "mixins";
 @import "variables";
 
+article
+{
+    margin: 0 15%;
+    justify-content: center;
+    text-justify: center;
+
+    h1
+    {
+        text-align: center; 
+    }
+
+}
 .post-header
 {
     h1

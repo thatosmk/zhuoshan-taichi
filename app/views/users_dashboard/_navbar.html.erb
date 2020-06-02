@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light pb-5">
   <div class="container">
-    <%= link_to "zhushan taichi", dashboard_path, class: "navbar-brand"%>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav ml-auto" role="navigation">
-        <div class="d-block d-lg-none">
+      <ul class="navbar-nav mx-auto" role="navigation">
+          <li class="nav-item">
+            <%= link_to "Dashboard", users_dashboard_files_path, class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Files", users_dashboard_files_path, class: "nav-link"%>
           </li>
@@ -19,10 +20,6 @@
           </li>
           <li class="nav-item">
             <%= link_to "Settings", users_dashboard_settings_path, class: "nav-link"%>
-          </li>
-        </div>
-          <li class="nav-item">
-            <%= link_to "Dashboard", users_dashboard_files_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Log out", destroy_user_session_path,method: :delete, class: "nav-link" %>

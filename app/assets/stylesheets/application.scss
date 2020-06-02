@@ -14,13 +14,13 @@
 @import "variables";
 @import "bootstrap";
 @import "font-awesome";
-@import "summernote-bs4";
 @import "site";
 @import "post";
 @import "dashboard";
 @import "users_dashboard";
 @import "simple_calendar";
 @import "mixins";
+@import "actiontext";
 //@import "flash";
 
 body
@@ -102,9 +102,7 @@ body
     }
     @media(min-width: 768px)
     {
-        background-image: url("wave_header_pics.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+        margin: 0 10%;
         min-height: 100vh;
 
         h1
@@ -116,9 +114,10 @@ body
 
         p
         {
-            line-height: 1.3;
+            line-height: 1.6;
             font-size: 1.8em;
-            padding-right: 30vw;
+            width: 40%;
+            
         }
     }
 }

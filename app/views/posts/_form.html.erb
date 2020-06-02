@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="py-4">
-    <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "Blog Title" %>
+    <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "Blog Title", required: true %>
   </div>
 
-  <div class="py-5 mx-2">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="py-5">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content, placeholder: "type here", rows: "10", style: "padding-top:8px; min-height: 100px;" %>
   </div>
 
   <div class="py-2">

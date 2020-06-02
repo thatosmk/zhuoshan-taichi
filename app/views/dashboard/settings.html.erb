@@ -6,142 +6,114 @@
     <hr/>
   </div>
   <div class="py-2 d-none d-lg-block">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="display-sec">
-          <div class="row">
-            <div class="col-xs-12 col-md-4 col-lg-4">
-              <div class="px-4 py-4">
-                <h6>Membership &nbsp; <a href="#member-modal" data-toggle="modal" data-target="#member-modal">update</a></h6>
-                <p class="py-2">
-                  <em>Students</em>
-                  <%= @club.membership_students %>
-                  <br/>
-                  <em>External members</em>
-                  <%= @club.membership_external %>
-                </p>
-                <div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Update your hourly rate</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <%= form_with(model: @club, local: true) do |form| %>
-                          <div class="py-4 mx-2">
-                            <%= form.text_field :membership_students, class: "form-control form-control-lg", placeholder: "Membership for students"%>
-                          </div>
-                          <div class="py-4 mx-2">
-                            <%= form.text_field :membership_external, class: "form-control form-control-lg", placeholder: "Membership for External members"%>
-                          </div>
-                          <div class="py-4 mx-2">
-                            <%= form.submit "Update", class: "btn btn-success btn-lg"%>
-                          </div>
-                        <% end%>
-                      </div>
-                    </div>
+    <div class="display-sec">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="px-4 py-4">
+            <h6>Membership &nbsp; <a href="#member-modal" data-toggle="modal" data-target="#member-modal">update</a></h6>
+            <p class="py-2">
+              <em>Students</em>
+              <%= @club.membership_students %>
+              <br/>
+              <em>External members</em>
+              <%= @club.membership_external %>
+            </p>
+            <div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update your hourly rate</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-4 col-lg-4">
-              <div class="px-4 py-4">
-                <h6>Class Times &nbsp; <a href="#times-modal" data-toggle="modal" data-target="#times-modal">update</a></h6>
-                <p class="py-2">
-                  <%= @club.class_times%>
-                </p>
-                <div class="modal fade" id="times-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content mx-2">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Update Class Times</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                  <div class="modal-body">
+                    <%= form_with(model: @club, local: true) do |form| %>
+                      <div class="py-4 mx-2">
+                        <%= form.text_field :membership_students, class: "form-control form-control-lg", placeholder: "Membership for students"%>
                       </div>
-                      <div class="modal-body">
-                        <%= form_with(model: @club, local: true) do |form| %>
-                          <div class="py-4 mx-2">
-                            <%= form.label :class_times %>
-                            <%= form.text_area :class_times, class: "form-control form-control-lg", placeholder: "add for both beginners & seniors", rows: 10%>
-                          </div>
-                          <div class="py-4 mx-2">
-                            <%= form.submit "Update class times", class: "btn btn-success btn-lg"%>
-                          </div>
-                        <% end %>
+                      <div class="py-4 mx-2">
+                        <%= form.text_field :membership_external, class: "form-control form-control-lg", placeholder: "Membership for External members"%>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-4 col-lg-4">
-              <div class="px-4 py-4">
-                <h6>Dress Code &nbsp; <a href="#dress-modal" data-toggle="modal" data-target="#dress-modal">update</a></h6>
-                <p class="py-2">
-                  <%= @club.dress_code%>
-                </p>
-              </div>
-              <div class="modal fade" id="dress-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content mx-2">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Update Dress Code</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= form_with(model: @club, local: true) do |form| %>
-                        <div class="py-4 mx-2">
-                          <%= form.label :dress_code %>
-                          <%= form.text_area :dress_code, class: "form-control form-control-lg", placeholder: "What can members wear?", rows: 10%>
-                        </div>
-                        <div class="py-4 mx-2">
-                          <%= form.submit "Update dress code", class: "btn btn-success btn-lg"%>
-                        </div>
-                      <% end %>
-                    </div>
+                      <div class="py-4 mx-2">
+                        <%= form.submit "Update", class: "btn btn-success btn-lg"%>
+                      </div>
+                    <% end%>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="py-4 display-sec">
-          <h6>Bio &nbsp; <a href="#bio-modal" data-toggle="modal" data-target="#bio-modal">update</a></h6>
-          <p class="lead py-4">
-            <%= @club.about.html_safe[0..550] %>
-          </p>
-          <div class="modal fade" id="bio-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="px-4 py-4">
+            <h6>Class Times &nbsp; <a href="#times-modal" data-toggle="modal" data-target="#times-modal">update</a></h6>
+            <p class="py-2">
+              <%= @club.class_times%>
+            </p>
+            <div class="modal fade" id="times-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content mx-2">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Class Times</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= form_with(model: @club, local: true) do |form| %>
+                      <div class="py-4 mx-2">
+                        <%= form.label :class_times %>
+                        <%= form.text_area :class_times, class: "form-control form-control-lg", placeholder: "add for both beginners & seniors", rows: 10%>
+                      </div>
+                      <div class="py-4 mx-2">
+                        <%= form.submit "Update class times", class: "btn btn-success btn-lg"%>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="px-4 py-4">
+            <h6>Dress Code &nbsp; <a href="#dress-modal" data-toggle="modal" data-target="#dress-modal">update</a></h6>
+            <p class="py-2">
+              <%= @club.dress_code%>
+            </p>
+          </div>
+          <div class="modal fade" id="dress-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content mx-2">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Update your bio</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Update Dress Code</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
                   <%= form_with(model: @club, local: true) do |form| %>
-                    <div class="py-4">
-                      <%= form.text_area :about, 'data-provider': :summernote, class: "form-control form-control-lg", placeholder: "talk about your club", rows: 8 %>
+                    <div class="py-4 mx-2">
+                      <%= form.label :dress_code %>
+                      <%= form.text_area :dress_code, class: "form-control form-control-lg", placeholder: "What can members wear?", rows: 10%>
                     </div>
-                    <div class="py-4">
-                      <%= form.submit "Update about", class: "btn btn-success btn-lg"%>
+                    <div class="py-4 mx-2">
+                      <%= form.submit "Update dress code", class: "btn btn-success btn-lg"%>
                     </div>
-                  <% end%>
+                  <% end %>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="py-4 display-sec">
+      <h6><%= link_to "update club bio", edit_club_path(@club)%></h6>
+      <p>
+        <%= @club.content %>
+      </p>
     </div>
     <div class="py-2">
       <h4 class="text-muted">

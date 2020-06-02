@@ -29,8 +29,8 @@
             </p>
           </div>
           <div class="card-footer">
-            <%= link_to "Edit", taichi_files_path(t_files), class: "btn btn-light" %>
-            <%= link_to "Delete", taichi_files_path(t_files), method: :delete, class: "btn btn-danger" %>
+            <%= link_to "Edit", edit_taichi_file_path(t_files), class: "btn btn-light" %>
+            <%= link_to "Delete", taichi_file_path(t_files), method: :delete, class: "btn btn-danger" %>
           </div>
         </div>
       <% end %>

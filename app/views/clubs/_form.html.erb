@@ -11,57 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :about %>
-    <%= form.text_area :about %>
+  <div class="row">
+    <div class="col-md-5 col-lg-4 col-xl-4">
+      <div class="py-2">
+        <%= form.label :dress_code %>
+        <%= form.text_area :dress_code, class: "form-control form-control-lg", required: true %>
+      </div>
+
+      <div class="py-2">
+        <%= form.label :class_times %>
+        <%= form.text_area :class_times, class: "form-control form-control-lg", required: true %>
+      </div>
+
+      <div class="pt-5 pb-2">
+        <%= form.label :contacts %>
+        <%= form.text_area :contacts, class: "form-control form-control-lg", required: true %>
+      </div>
+
+      <div class="py-2">
+        <%= form.label :facebook %>
+        <%= form.text_field :facebook, class: "form-control form-control-lg", required: true %>
+      </div>
+
+      <div class="py-2">
+        <%= form.label :instagram %>
+        <%= form.text_field :instagram, class: "form-control form-control-lg", required: true %>
+      </div>
+
+      <div class="py-2">
+        <%= form.label :youtube %>
+        <%= form.text_field :youtube, class: "form-control form-control-lg", required: true %>
+      </div>
+    </div>
+    <div class="col-md-7 col-lg-8 col-xl-8">
+      <div class="field">
+        <%= form.label :about %>
+        <%= form.rich_text_area :content %>
+      </div>
+      <div class="py-5" style="float: right;">
+        <%= form.submit "Update Club", class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :history %>
-    <%= form.text_area :history %>
-  </div>
 
-  <div class="field">
-    <%= form.label :dress_code %>
-    <%= form.text_area :dress_code %>
-  </div>
-
-  <div class="field">
-    <%= form.label :class_times %>
-    <%= form.text_area :class_times %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contacts %>
-    <%= form.text_area :contacts %>
-  </div>
-
-  <div class="field">
-    <%= form.label :coach_name %>
-    <%= form.text_field :coach_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :coach_bio %>
-    <%= form.text_area :coach_bio %>
-  </div>
-
-  <div class="field">
-    <%= form.label :facebook %>
-    <%= form.text_field :facebook %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instagram %>
-    <%= form.text_field :instagram %>
-  </div>
-
-  <div class="field">
-    <%= form.label :youtube %>
-    <%= form.text_field :youtube %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

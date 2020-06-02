@@ -24,6 +24,14 @@
     <div class="py-4 mx-2">
       <%= form.label :file_to_uploaded%>
       <br/>
+      <% if @taichi_file.docs.attached?%>
+        <span class="font-italic">
+          pdfs attached 
+        </span>
+        <p>
+          <%= @taichi_file.docs.filename %>
+        </p>
+      <% end%>
       <span class="font-italic">
         pdfs are preferred
       </span>

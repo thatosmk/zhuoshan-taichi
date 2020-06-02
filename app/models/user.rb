@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :events
   has_many :contents
   has_many :posts
+
+  def full_name
+    self.first_name.concat(' ').concat(self.last_name)
+  end
 end

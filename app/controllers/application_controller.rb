@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_club
-  before_action :set_admin
 
   def after_sign_in_path_for(resource)
     if current_user.admin?
@@ -21,13 +20,5 @@ class ApplicationController < ActionController::Base
 
     def set_club
       @club = Club.first
-    end
-
-    def set_admin
-      if current_user.try(:admin?)
-        @admin = current_user
-      else
-        @admin = nil
-      end
     end
 end

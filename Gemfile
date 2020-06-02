@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
+gem 'rails', '~> 6.0.0', '>= 6.0.0'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 group :production do
@@ -85,7 +86,6 @@ gem 'kaminari'
 
 gem 'simple_form'
 gem 'jquery-turbolinks'
-gem 'summernote-rails', '~> 0.8.12.0'
 # error reporting and monitoring
 gem 'administrate'
 gem 'caxlsx'
@@ -96,3 +96,4 @@ gem "simple_calendar", "~> 2.0"
 gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'devise_invitable', '~> 2.0.0'
 gem "webpacker"
+gem 'readingtime'
