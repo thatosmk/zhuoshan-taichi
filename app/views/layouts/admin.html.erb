@@ -63,16 +63,18 @@
             <%= render 'layouts/flashy' %>
             <div class="d-flex flex-md-row flex-column bd-highlight">
               <div class="bd-highlight w-100">
-                <h1>Tai Chi</h1>
-                <p class="py-4 w-75">
-                  This gentle form of exercise can help maintain harmony, 
-                  content, freedom and balance in your life. It could be 
-                  the perfect activity for the rest of your life.
-                </p>
-                <div class="pt-2 pb-2">
-                  <%= link_to "Read more", about_path, class: "btn btn-block btn-dark d-block d-md-none"%>
-                  <%= link_to "Read more", about_path, class: "btn btn-lg py-3 px-3 btn-dark d-md-inline d-none"%>
-                </div>
+                  <div>
+                    <h1>Tai Chi</h1>
+                    <p class="py-4 w-75">
+                      This gentle form of exercise can help maintain harmony, 
+                      content, freedom and balance in your life. It could be 
+                      the perfect activity for the rest of your life.
+                    </p>
+                    <div class="pt-2 pb-2">
+                      <%= link_to "Read more", about_path, class: "btn btn-block btn-dark d-none d-md-block"%>
+                      <%= link_to "Read more", about_path, class: "btn btn-lg btn-dark d-md-none d-block"%>
+                    </div>
+                  </div>
               </div>
               <div class="bd-highlight w-100">
                 <%= image_tag("hero-2.png", class: "img-fluid", lazy: true)%>

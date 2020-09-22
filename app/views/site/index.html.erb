@@ -1,11 +1,12 @@
-<div class="grounded py-4 text-center">
+<div class="grounded my-5 text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L60,53.3C120,43,240,21,360,26.7C480,32,600,64,720,106.7C840,149,960,203,1080,213.3C1200,224,1320,192,1380,176L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
   <div class="container">
       <h2 class="font-weight-bold">
         What is Tai Chi
       </h2>
-      <div class="py-5 mx-4">
+      <div class="mx-4">
         <div class="d-none d-md-block">
-          <p class="py-5 mx-4">
+          <p class="pt-3 mx-4">
             In the practice of Tai Qi one finds peace of heart, tranquillity of spirit and a better viewpoint from which to view the frenetic activity which surrounds us in the sentient world.  There is no space for “escapism” through Tai Qi, as we endeavour to acknowledge, embrace and become one with life as it is.
           </p>
         </div>
@@ -14,6 +15,7 @@
             In the practice of Tai Qi one finds peace of heart, tranquillity of spirit and a better viewpoint from which to view the frenetic activity which surrounds us in the sentient world.  There is no space for “escapism” through Tai Qi, as we endeavour to acknowledge, embrace and become one with life as it is.
           </p>
         </div>
+        <%= link_to "Read more", about_path, class: "btn btn-lg btn-dark"%>
       </div>
     </div>
   </div>
@@ -29,287 +31,156 @@
         We are a club that is governed by Sport Administration at the University of Cape Town
       </p>
     </div>
-    <div class="d-md-block d-none">
-      <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <div class="py-5 costs">
-            <h3>
-            Affordable Classes
-            </h3>
-            <p class="py-2">
-              <p class="lead">
-                Your first class:
-                <span class="badge badge-dark py-2 mx-2 text-white">
-                  FREE
-                  </span>
-              </p>
-              <p class="lead">
-                UCT Students: R380/year
-                  <span class="badge badge-dark py-2 mx-2 text-white">
-                  Charged to your student account
-                  </span>
 
-              </p>
-              <p class="lead">
-                External members:
-                  <span class="badge badge-dark py-2 mx-2 text-white">
-                  Email us
-                  </span>
-              </p>
+    <div class="d-flex flex-md-row flex-column bd-highlight">
+      <div class="bd-highlight w-100">
+        <div class="py-5 costs text-center">
+          <h3>
+          Affordable Classes
+          </h3>
+          <p class="py-2">
+            <p class="lead">
+              Your first class:
+              <span class="badge badge-dark py-2 mx-2 text-white">
+                FREE
+                </span>
             </p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <div class="py-2 text-center">
-            <div class="text-center">
-              <%=image_tag("club_fun.jpg",style: "" ,class: "img-fluid rounded")%>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="d-md-none d-sm-block">
-      <div class="text-center">
-        <%=image_tag("club_fun.jpg",style: "" ,class: "img-fluid rounded")%>
-      </div>
-      <div class="pt-5 costs text-center">
-        <h3>
-        Affordable Classes
-        </h3>
-        <p class="py-2">
-          <p class="lead">
-            Your first class:
+            <p class="lead">
+              UCT Students: R380/year
                 <span class="badge badge-dark py-2 mx-2 text-white">
-                  FREE
-                  </span>
-          </p>
-          <p class="lead">
-            UCT Students: R380-/year
-                  <span class="badge badge-dark py-2 mx-2 text-white">
-                  Charged to your student account
-                  </span>
-          </p>
-          <p class="lead">
-            External members:
-                  <span class="badge badge-dark py-2 mx-2 text-white">
-                  Email us
-                  </span>
-          </p>
-        </p>
-      </div>
-      <div class="text-center">
-        <%=image_tag("wear_club.jpg",style: "" ,class: "img-fluid rounded")%>
-      </div>
-      <div class="py-5 text-center">
-        <h3>
-          What To Wear
-        </h3>
-        <p style="line-height: 1.58;" class="lead py-2">
-          <%= @club.dress_code %>
-        </p>
-      </div>
-    </div>
+                Charged to your student account
+                </span>
 
-    <div class="d-md-block d-none">
-      <div class="py-5 wear">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-6">
-            <%=image_tag("wear_club.jpg",style: "" ,class: "img-fluid rounded")%>
-          </div>
-          <div class="col-xs-12 col-md-6 col-lg-6">
-            <div class="py-5">
-              <h3 class="text-right">
-                What To Wear
-              </h3>
-              <p style="line-height: 1.58;" class="text-right lead py-2 ml-4">
-                <%= @club.dress_code %>
-              </p>
-            </div>
-          </div>
+            </p>
+            <p class="lead">
+              External members:
+                <span class="badge badge-dark py-2 mx-2 text-white">
+                Email us
+                </span>
+            </p>
+          </p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="venue" id="venue">
-  <div class="text-center">
-    <h2>
-      Martial Arts Room
-    </h2>
-    <p class="lead">
-      UCT Sports Center
-    </p>
-    <h3 class="pt-5">
-      beginner class
-    </h3>
-    <p class="lead">
-    Tuesdays &amp; Thursdays<br/>
-      17h00 to 18h30
-    </p>
-    <h3 class="pt-2 pb-2">
-      senior class
-    </h3>
-    <p class="lead">
-    Tuesdays &amp; Thursdays<br/>
-      18h30 to 20h00
-    </p>
-  </div>
-</div>
-
-<div class="container coach d-none">
-  <div class="d-md-block d-none">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-6">
-        <div class="py-5">
-          <h1>
-          High Quality Classes
-          </h1>
-          <p class="lead py-4">
-            It is a long established fact that a reader will be distracted by the
-            readable content of a page when looking at its layout. The point of
-            using Lorem Ipsum is that it has a more-or-less normal distribution of
-            letters, as opposed to using 'Content here, content here', making it
-            look like readable English. Many desktop publishing packages and web
-            page editors now use Lorem Ipsum as their default model text.
-          </p>
-          <%= link_to "Read more", about_path, class: "btn btn-huge btn-primary"%>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-6">
+      <div class="bd-highlight w-100">
         <div class="py-5 text-center">
-          <div class="py-4">
-            <%= image_tag("coach.jpg", style: "height: 360px;",class: "img-fluid rounded")%>
+          <div class="text-center">
+            <%=image_tag("club_fun.jpg",style: "" ,class: "img-fluid rounded")%>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="d-md-none d-block">
-    <div class="py-5 text-center">
-      <h1>
-      High Quality Classes
-      </h1>
-      <p class="lead py-4">
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout. The point of
-        using Lorem Ipsum is that it has a more-or-less normal distribution of
-        letters, as opposed to using 'Content here, content here', making it
-        look like readable English. Many desktop publishing packages and web
-        page editors now use Lorem Ipsum as their default model text.
-      </p>
+    <div class="d-flex flex-md-row flex-column bd-highlight">
+      <div class="bd-highlight w-100">
+        <div class="py-5">
+          <%=image_tag("taichi-stance.jpg",style: "" ,class: "img-fluid rounded")%>
+        </div>
+      </div>
+      <div class="bd-highlight w-100">
+        <div class="py-5 text-center">
+          <h3 class="py-2">
+            What To Wear
+          </h3>
+          <p style="line-height: 1.58;" class="lead py-2 ml-4">
+            <%= @club.dress_code %>
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="py-4 text-center">
-      <%= image_tag("coach.jpg", style: "height: 360px;",class: "img-fluid rounded")%>
-    </div>
-    <div class="py-4 text-center">
-      <%= link_to "Read more", about_path, class: "btn btn-huge btn-primary"%>
+
+    <div class="d-flex flex-md-row flex-column bd-highlight">
+      <div class="bd-highlight w-100">
+        <div class="text-center py-5">
+          <h2>
+            Martial Arts Room
+          </h2>
+          <p class="lead">
+            UCT Sports Center
+          </p>
+          <h3 class="pt-5">
+            beginner class
+          </h3>
+          <p class="lead">
+          Tuesdays &amp; Thursdays<br/>
+            17h00 to 18h30
+          </p>
+          <h3 class="pt-2 pb-2">
+            senior class
+          </h3>
+          <p class="lead">
+          Tuesdays &amp; Thursdays<br/>
+            18h30 to 20h00
+          </p>
+        </div>
+      </div>
+      <div class="bd-highlight w-100">
+        <div class="py-5">
+          <%=image_tag("wear_club.jpg",style: "" ,class: "img-fluid rounded")%>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="reviews">
-  <div class="container">
+  <div class="container jumbotron">
     <div class="py-5 text-center">
       <h2 class="font-weight-bold">
         In the words of our students
       </h2>
     </div>
-    <div class="py-5 students">
-      <div class="carousel slide" id="thoughts-controls" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="py-2">
+      <div class="card-columns">
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              “Tai Chi = being content, not consumed!”
+
+            </p>
           </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              “The way to a flowing form is simply through time, discipline, and patience.”
+            </p>
           </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="card mb-4 border-light">
-                  <div class="card-body mx-4">
-                    <p class="card-text">
-                      "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              “Tai chi is simple, but it's not easy.”
+            </p>
+          </div>
+        </div>
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              “Tai chi is about first learning to let go and not stand in your own way.”
+            </p>
+          </div>
+        </div>
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              “Anything worth doing takes time to master. Find out who you are.”
+            </p>
+          </div>
+        </div>
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              “The biggest war is with your self, and your memory, until muscle memory kicks in and you kick your mind out.”
+            </p>
+          </div>
+        </div>
+        <div class="card mb-4 border-light">
+          <div class="card-body mx-4">
+            <p class="card-text">
+              "There is no secret ingredient; it's all you". 
+              <small>
+              - Po Ping, Kung Fu Panda :)
+              </small>
+            </p>
           </div>
         </div>
       </div>
@@ -317,7 +188,8 @@
   </div>
 </div>
 
-<div class="py-5 socials">
+<div class="my-5 socials">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L60,53.3C120,43,240,21,360,26.7C480,32,600,64,720,106.7C840,149,960,203,1080,213.3C1200,224,1320,192,1380,176L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
   <div class="text-center ">
     <h2 class="font-weight-bold">
       Club Socials
@@ -366,7 +238,7 @@
 </div>
 
 <div class="pt-5 text-center contact" id="contact">
-  <%=image_tag("yin.png",style: "height: 50px;" ,class: "img-fluid")%>
+  <%=image_tag("yin.png",style: "height: 150px;" ,class: "img-fluid")%>
   <h2 class="font-weight-bold">Get in touch</h2>
   <p class="pt-5">
     <span class="mx-2 py-4 text-primary fa fa-envelope fa-2x">

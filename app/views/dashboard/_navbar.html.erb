@@ -1,31 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
+  <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav mx-auto" role="navigation">
+      <ul class="navbar-nav ml-auto" role="navigation">
+            <li class="nav-item">
+              <%= link_to "Forum", simple_discussion_path, class: "nav-link" %>
+            </li>
           <li class="nav-item">
             <%= link_to "Overview", dashboard_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Blog", blog_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Invite a member", new_user_invitation_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Members", members_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Files", taichi_files_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Videos", videos_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Settings", settings_path, class: "nav-link"%>
           </li>
           <li class="nav-item active">
             <%= link_to "Log out", destroy_user_session_path,method: :delete, class: "nav-link" %>

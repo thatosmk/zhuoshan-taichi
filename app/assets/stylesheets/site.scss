@@ -4,6 +4,10 @@
 @import "variables";
 @import "mixins";
 
+.chat-wrapper
+{
+    background-color: $secondary;
+}
 .about_section
 {
 
@@ -18,16 +22,14 @@
 .reviews
 {
     @include landing_div(#fff);
+
     h2
     {
         @include landing_h2(#000);
     }
     .students
     {
-        @include landing_div(#fff);
-        background-image: url("tiny_graphic_background.png");
-        background-repeat: no-repeat;
-        background-position: top center;
+        @include landing_div(#eee);
 
         .carousel
         {
@@ -59,15 +61,12 @@
 
 .grounded
 {
-    @include landing_div(transparent);
-    background-image: url("wave_about_1x.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: $light;
     min-height: calc(260px + 85vh);
     h2
     {
         @include landing_h2(#000);
-        padding-top: 350px;
+        padding-top: 50px;
     }
     p
     {
@@ -118,7 +117,10 @@
 }
 .venue
 {
-    @include landing_div(#f2f2f2);
+    position: relative;
+    overflow: hidden;
+    background: $secondary;
+    padding-bottom: 50px;
     h2
     {
         @include landing_h2(#000);
@@ -150,16 +152,8 @@
 }
 .socials
 {
-    @include landing_div(#f2f2f2);
-    background-image: url("wave_about_1x.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: $secondary;
     min-height: calc(260px + 85vh);
-    h2
-    {
-        @include landing_h2(#000);
-        padding-top: 150px;
-    }
     p
     {
         @include landing_p(#000); 
@@ -167,7 +161,6 @@
 }
 .contact
 {
-    @include landing_div(#fff);
     h2
     {
         @include landing_h2(#000);

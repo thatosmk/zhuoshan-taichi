@@ -1,30 +1,6 @@
-<footer class="py-5 footer">
-  <div class="text-center footer-div d-none d-md-block">
-    <h2 class="py-4 text-white footer-header">zhuoshan tai chi</h2>
-    <p>
-      <%= link_to "About Us" ,about_path,  class: "mx-2"%>
-      <%= link_to "Find us" ,"#venue",  class: "mx-2"%>
-      <%= link_to "Blog" , posts_path,  class: "mx-2"%>
-      <%= link_to "Contact" ,"#contact",  class: "mx-2"%>
-      <%= link_to "Gallery" ,gallery_path,  class: "mx-2"%>
-    </p>
-
-    <div class="py-5">
-      <a href="https://www.facebook.com">
-        <span class="mx-2 fa fa-facebook fa-2x">
-        </span>
-      </a>
-      <a href="https://www.instagram.com">
-        <span class="mx-2 fa fa-instagram fa-2x">
-        </span>
-      </a>
-      <a href="https://www.youtube.com">
-        <span class="mx-2 fa fa-youtube fa-2x"></span>
-      </a>
-      <p class="pt-5 text-white"> zhuoshan tai chi &copy; 2020 All Rights Reserved</p>		
-    </div>
-  </div>
-  <div class="text-center footer-div d-md-none d-block">
+<footer class="pt-5">
+  <div class="wave-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L60,128C120,160,240,224,360,224C480,224,600,160,720,144C840,128,960,160,1080,170.7C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
     <h2 class="py-4 text-white footer-header">zhuoshan tai chi</h2>
     <p>
       <%= link_to "About Us" ,about_path,  class: "px-2"%>
@@ -35,17 +11,18 @@
     </p>
 
     <div class="py-5 text-center">
-      <a href="https://www.facebook.com">
+      <%= link_to "https://facebook.com/#{@club.facebook}" do %>
         <span class="px-2 fa fa-facebook fa-2x">
         </span>
-      </a>
-      <a href="https://www.instagram.com">
+      <% end %>
+      <%= link_to "https://instagram.com/#{@club.instagram}" do %>
         <span class="px-2 fa fa-instagram fa-2x">
         </span>
-      </a>
-      <a href="https://www.youtube.com">
-        <span class="px-2 fa fa-youtube fa-2x"></span>
-      </a>
+      <% end %>
+      <%= link_to "https://youtube.com/#{@club.youtube}" do %>
+        <span class="px-2 fa fa-youtube fa-2x">
+        </span>
+      <% end %>
       <p class="pt-5 text-white"> zhuoshan tai chi &copy; 2020 All Rights Reserved</p>		
     </div>
   </div>

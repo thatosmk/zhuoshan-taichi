@@ -26,7 +26,8 @@ class DashboardController < ApplicationController
   end
 
   def blog
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
+    @post = Post.new
   end
 
   def calendar

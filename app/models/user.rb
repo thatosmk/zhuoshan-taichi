@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include SimpleDiscussion::ForumUser
   # associations
   has_many :events
   has_many :contents
@@ -11,5 +12,9 @@ class User < ApplicationRecord
 
   def full_name
     self.first_name.concat(' ').concat(self.last_name)
+  end
+
+  def name
+    "#{first_name} #{last_name}"
   end
 end

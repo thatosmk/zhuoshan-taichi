@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount SimpleDiscussion::Engine => "/forum"
   resources :taichi_files
   get 'users_dashboard/videos'
   get 'users_dashboard/files'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard/members', as: :members
   get 'dashboard/blog', as: :blog
   get 'dashboard/calendar', as: :calendar
+  get 'dashboard/resources', to: "dashboard#videos", as: :club_videos
 
   resources :contents
   resources :posts
