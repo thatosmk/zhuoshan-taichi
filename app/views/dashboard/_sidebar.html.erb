@@ -1,31 +1,39 @@
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="card">
+    <div class="media pt-3">
+      <p class="mr-3">
+      </p>
+      <div class="media-body">
+        <h4><%= current_user.name %></h4>
+        <% if current_user.admin? %>
+          <span class="badge badge-light px-3 py-2">
+            admin
+          </span>
+        <% end %>
+      </div>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <div class="position-relative card">
-        <ul class="nav nav-pills flex-column">
-          <div class="card-body">
-          <li class="nav-item">
-            <%= link_to "Overview", dashboard_path, class: "nav-link #{'active' if current_page?(dashboard_path)}" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Blog", blog_path, class: "nav-link #{'active' if current_page?(blog_path)}" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Members", members_path, class: "nav-link #{ 'active' if current_page?(members_path)}"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Files", taichi_files_path, class: "nav-link #{ 'active' if current_page?(taichi_files_path)}"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Videos", club_videos_path, class: "nav-link #{ 'active' if current_page?(club_videos_path)}"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Settings", settings_path, class: "nav-link #{ 'active' if current_page?(settings_path)}"%>
-          </li>
-          </div>
-        </ul>
-      </div>
+    <div class="pt-1">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= link_to "Overview", dashboard_path, class: "nav-link #{'active' if current_page?(dashboard_path)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to "Blog", blog_path, class: "nav-link #{'active' if current_page?(blog_path)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to "Members", members_path, class: "nav-link #{ 'active' if current_page?(members_path)}"%>
+        </li>
+        <li class="list-group-item">
+          <%= link_to "Files", taichi_files_path, class: "nav-link #{ 'active' if current_page?(taichi_files_path)}"%>
+        </li>
+        <li class="list-group-item">
+          <%= link_to "Videos", club_videos_path, class: "nav-link #{ 'active' if current_page?(club_videos_path)}"%>
+        </li>
+        <li class="list-group-item">
+          <%= link_to "Settings", settings_path, class: "nav-link #{ 'active' if current_page?(settings_path)}"%>
+        </li>
+      </ul>
     </div>
   </nav>

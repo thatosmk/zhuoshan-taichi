@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  layout "admin"
   before_action :authenticate_user!
   before_action do |controller|
     unless controller.send(:is_admin?)

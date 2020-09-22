@@ -6,7 +6,6 @@
  */
 @mixin landing_div($color) {
     padding-top: 80px;
-    padding-bottom: 80px;
     background-color: $color;
     position: relative;
     min-height: calc(260px + 30vh);

@@ -62,7 +62,7 @@
 .grounded
 {
     background-color: $light;
-    min-height: calc(260px + 85vh);
+    min-height: calc(150px + 85vh);
     h2
     {
         @include landing_h2(#000);
@@ -76,7 +76,7 @@
             font-weight: 400; 
             font-size: 1.2em;
         }
-        @media(min-width: 768px)
+        @media(min-width: 992px)
         {
             @include landing_p(#000); 
         }
