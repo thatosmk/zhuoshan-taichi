@@ -49,10 +49,10 @@
         </div>
       <% else %>
         <div class="main-wrapper">
-          <div class="container pt-3">
             <%= render 'users_dashboard/navbar' %>
-            <%= yield %>
-          </div>
+            <div class="container py-5">
+              <%= yield %>
+            </div>
         </div>
       <% end %>
     <% else %>

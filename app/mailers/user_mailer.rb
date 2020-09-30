@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
     helper :application 
     include Devise::Controllers::UrlHelpers
     default template_path: 'users/mailer'
-    default from: 'no-reply@ucttaichi.com'
+    default from: 'no-reply@zhuoshantaichi.co.za'
 
     def welcome(resource)
         @user = resource 
