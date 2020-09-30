@@ -194,18 +194,18 @@
               </div>
             </div>
             <p class="lead py-4">
-              <a href="<%= @club.facebook %>">
+              <%= link_to "https://facebook.com/#{@club.facebook}" do %>
                 <span class="mx-2 fa fa-facebook fa-2x">
                 </span>
-              </a>
-              <a href="<%= @club.instagram %>">
+              <% end %>
+              <%= link_to "https://instagram.com/#{@club.instagram}" do %>
                 <span class="mx-2 fa fa-instagram fa-2x">
                 </span>
-              </a>
-              <a href="<%= @club.youtube %>">
+              <% end %>
+              <%= link_to "https://youtube.com/#{@club.youtube}" do %>
                 <span class="mx-2 fa fa-youtube fa-2x">
                 </span>
-              </a>
+              <% end %>
             </p>
           </div>
           <div class="py-2 display-sec">

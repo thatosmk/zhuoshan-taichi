@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand pr-5" href="/">zhuoshan taichi</a>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <% image_tag("club_logo.jpg", height: "48px", class: "rounded pt-2") %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

@@ -98,3 +98,4 @@ gem 'devise_invitable', '~> 2.0.0'
 gem "webpacker"
 gem 'readingtime'
 gem 'simple_discussion'
+gem 'mailgun-ruby', '~>1.1.6'
